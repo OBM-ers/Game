@@ -1843,7 +1843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdc57685b125a4280d07956eb7d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animatorOBM: {fileID: 1548454541}
+  timeBetweenAttackOBM: 2
 --- !u!95 &1548454541
 Animator:
   serializedVersion: 3
@@ -1922,7 +1923,7 @@ Transform:
   m_GameObject: {fileID: 1548454539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.19999999, y: 0.110000014, z: 2.2880049}
-  m_LocalScale: {x: 6.748171, y: 6.748171, z: 6.748171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2001485106}
   m_RootOrder: 0
