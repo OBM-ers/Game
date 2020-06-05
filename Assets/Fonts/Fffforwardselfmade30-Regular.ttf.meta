@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: a63e5700fda893a4db70cfaaa3e0442e
+guid: 4b79419fc97ff46419688ee2d5e14604
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
+  fontSize: 500
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: pix PixelFJVerdana12pt
+  fontName: Fffforwardselfmade30
   fontNames:
-  - pix PixelFJVerdana12pt
+  - Fffforwardselfmade30
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
