@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 673d2e0aed8d57a4d8b347c002bd8fe5
+guid: 3851d92907771474e9a41d9dcecfc537
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 180
-  forceTextureCase: -1
+  fontSize: 16
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: FFF Forward
+  fontName: DisposableDroid BB
   fontNames:
-  - FFF Forward
+  - DisposableDroid BB
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

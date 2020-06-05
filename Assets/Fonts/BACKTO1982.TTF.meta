@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 673d2e0aed8d57a4d8b347c002bd8fe5
+guid: ddb92fe4917ab124dad8b40240ad452a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 180
+  fontSize: 120
   forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: FFF Forward
+  fontName: Back to 1982
   fontNames:
-  - FFF Forward
+  - Back to 1982
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
