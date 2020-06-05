@@ -2,34 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementScript : PhysicsScript
+public class PlayerMovementScript : MonoBehaviour
 {
-    public float maxSpeedObm = 7;
-    public float jumpTakeoffSpeedObm = 7;
+    private Rigidbody2D playerRigidbodyObm;
 
-    void Start()
+    // Input variables
+    private float xInputObm = 0f;
+    // Speed variables
+    public float runSpeedObm = 40f;
+    public float jumpSpeedObm = 400f;
+    public float movementSmoothingObm = .05f;
+    // Jump variables
+    public float fallMultiplierObm = 250f;
+    public float lowJumpMultiplierObm = 200f;
+    private bool isGroundedObm = true;
+
+    private Vector3 VelocityObm = Vector3.zero;
+
+    void Awake()
     {
-        
+        playerRigidbodyObm = GetComponent<Rigidbody2D>();
     }
 
-    protected override void ComputeVelocityObm()
+    void Update()
     {
-        Vector2 m_moveObm = Vector2.zero;
+        xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
+        MoveObm();
+    }
 
-        m_moveObm.x = Input.GetAxis("Horizontal");
+    private void MoveObm()
+    {
+        Vector3 targetVelocityObm = new Vector2(xInputObm * 10f, playerRigidbodyObm.velocity.y);
+        playerRigidbodyObm.velocity = Vector3.SmoothDamp(playerRigidbodyObm.velocity, targetVelocityObm, ref VelocityObm, movementSmoothingObm);
 
-        if (Input.GetButtonDown("Jump") && groundedObm)
+        if (isGroundedObm == true && Input.GetButtonDown("Jump"))
         {
-            velocityObm.y = jumpTakeoffSpeedObm;
+            isGroundedObm = false;
+            playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
         }
-        else if (Input.GetButtonUp("Jump"))
-        {
-            if (velocityObm.y > 0)
-            {
-                velocityObm.y = velocityObm.y * .5f;
-            }
-        }
+        //if (playerRigidbodyObm.velocity.y < 0)
+        //{
+        //    playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
+        //}
+        //else if (playerRigidbodyObm.velocity.y > 0 && !Input.GetButton("Jump"))
+        //{
+        //    playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
+        //}
 
-        targetVelocityObm = m_moveObm * maxSpeedObm;
+    }
+
+    void OnCollisionEnter2D(Collision2D collisionObm)
+    {
+        if (collisionObm.gameObject.CompareTag("Ground"))
+        {
+            isGroundedObm = true;
+        }
+        Debug.Log("Ground Checked");
     }
 }
