@@ -14,6 +14,7 @@ TagManager:
   - UI
   - 
   - 
+  - Player Icon
   - 
   - 
   - Player
@@ -39,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1146193379
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player Icon
+    uniqueID: 1368061151
     locked: 0
