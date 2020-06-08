@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class HealthBarSliderOBM : MonoBehaviour
 {
     //Slider component
-    public Slider sliderObm;
+    public Slider sliderOBM;
 
-    public void SetMaxHealthObm(int a_healthBarObm)
+    public void SetMaxHealthOBM(int a_healthBarOBM)
     {
         //Set slider values to set max health (from PlayerHud script)
-        sliderObm.maxValue = a_healthBarObm;
-        sliderObm.value = a_healthBarObm;
+        sliderOBM.maxValue = a_healthBarOBM;
+        sliderOBM.value = a_healthBarOBM;
     }
 
-    public void SetHealthObm(int a_healthBarObm)
+    public void SetHealthOBM(int a_healthBarOBM)
     {
         //Set slider values to set health (from PlayerHud script)
-        sliderObm.value = a_healthBarObm;
+        sliderOBM.value = a_healthBarOBM;
     }
 }

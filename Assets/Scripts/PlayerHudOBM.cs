@@ -5,72 +5,72 @@ using UnityEngine;
 
 public class PlayerHudOBM : MonoBehaviour
 {
-    public int maxValuesObm = 100;
-    public int currentHealthObm;
-    public int currentEnergyObm;
+    public int maxValuesOBM = 100;
+    public int currentHealthOBM;
+    public int currentEnergyOBM;
 
-    private float rechargeTimeObm = 2;
-    public float timerObm;
+    private float rechargeTimeOBM = 2;
+    public float timerOBM;
 
-    public HealthBarSliderOBM healthBarSliderObm;
-    public EnergyBarSliderOBM energyBarSliderObm;
+    public HealthBarSliderOBM healthBarSliderOBM;
+    public EnergyBarSliderOBM energyBarSliderOBM;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealthObm = maxValuesObm;
-        healthBarSliderObm.SetMaxHealthObm(maxValuesObm);
+        currentHealthOBM = maxValuesOBM;
+        healthBarSliderOBM.SetMaxHealthOBM(maxValuesOBM);
 
-        currentEnergyObm = maxValuesObm;
-        energyBarSliderObm.SetMaxEnergyObm(maxValuesObm);
+        currentEnergyOBM = maxValuesOBM;
+        energyBarSliderOBM.SetMaxEnergyOBM(maxValuesOBM);
 
-        timerObm = rechargeTimeObm;
+        timerOBM = rechargeTimeOBM;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentEnergyObm != 100)
+        if(currentEnergyOBM != 100)
         {
-            timerObm -= Time.deltaTime;
+            timerOBM -= Time.deltaTime;
 
-            if(timerObm < 0)
+            if(timerOBM < 0)
             {
-                RechargeEnergyObm(20);
-                timerObm = rechargeTimeObm;
+                RechargeEnergyOBM(20);
+                timerOBM = rechargeTimeOBM;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamageObm(20);
+            TakeDamageOBM(20);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if(currentEnergyObm > 0)
+            if(currentEnergyOBM > 0)
             {
-                UseEnergyObm(20);
+                UseEnergyOBM(20);
             }
         }
     }
 
     //Methods
-    void TakeDamageObm(int a_damageObm)
+    void TakeDamageOBM(int a_damageOBM)
     {
-        currentHealthObm -= a_damageObm;
-        healthBarSliderObm.SetHealthObm(currentHealthObm);
+        currentHealthOBM -= a_damageOBM;
+        healthBarSliderOBM.SetHealthOBM(currentHealthOBM);
     }
 
-    void UseEnergyObm(int a_useEnergyObm)
+    void UseEnergyOBM(int a_useEnergyOBM)
     {
-        currentEnergyObm -= a_useEnergyObm;
-        energyBarSliderObm.SetEnergyObm(currentEnergyObm);
+        currentEnergyOBM -= a_useEnergyOBM;
+        energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
 
-    void RechargeEnergyObm(int a_rechargeEnergyObm)
+    void RechargeEnergyOBM(int a_rechargeEnergyOBM)
     {
-        currentEnergyObm += a_rechargeEnergyObm;
-        energyBarSliderObm.SetEnergyObm(currentEnergyObm);
+        currentEnergyOBM += a_rechargeEnergyOBM;
+        energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
 }

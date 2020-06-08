@@ -7,36 +7,33 @@ using UnityEngine.UI;
 
 public class TimerOBM : MonoBehaviour
 {
-    public Text timerTextObm;
+    public Text timerTextOBM;
 
-    private float startTimeObm = 0;
+    private float startTimeOBM = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        startTimeObm = Time.time;
+        startTimeOBM = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float actualTimeTakenObm = startTimeObm + Time.time;
+        float actualTimeTakenOBM = startTimeOBM + Time.time;
 
-        string minutes = ((int)actualTimeTakenObm / 60).ToString("00");
-        string seconds = (actualTimeTakenObm % 60).ToString("f2");
-        //string s = seconds.Substring(seconds.Length + 2);
-        //string ms = seconds.Substring(seconds.Length - 2);
+        string minutesOBM = ((int)actualTimeTakenOBM / 60).ToString("00");
+        string secondsOBM = (actualTimeTakenOBM % 60).ToString("f2");
 
-        seconds = seconds.Replace(',', ':');
-        //string s = ;
+        secondsOBM = secondsOBM.Replace(',', ':');
 
-        if (seconds.Length != 5)
+        if (secondsOBM.Length != 5)
         {
-            timerTextObm.text = minutes + ":0" + seconds;
+            timerTextOBM.text = minutesOBM + ":0" + secondsOBM;
         }
         else
         {
-            timerTextObm.text = minutes + ":" + seconds;
+            timerTextOBM.text = minutesOBM + ":" + secondsOBM;
         }
     }
 }

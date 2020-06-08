@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class EnergyBarSliderOBM : MonoBehaviour
 {
     //Slider component
-    public Slider sliderObm;
+    public Slider sliderOBM;
 
-    public void SetMaxEnergyObm(int a_energyBarObm)
+    public void SetMaxEnergyOBM(int a_energyBarOBM)
     {
         //Set slider values to set max health (from PlayerHud script)
-        sliderObm.maxValue = a_energyBarObm;
-        sliderObm.value = a_energyBarObm;
+        sliderOBM.maxValue = a_energyBarOBM;
+        sliderOBM.value = a_energyBarOBM;
     }
 
-    public void SetEnergyObm(int a_energyBarObm)
+    public void SetEnergyOBM(int a_energyBarOBM)
     {
         //Set slider values to set health (from PlayerHud script)
-        sliderObm.value = a_energyBarObm;
+        sliderOBM.value = a_energyBarOBM;
     }
 }
