@@ -346,6 +346,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorOBM: {fileID: 342494676}
   timeBetweenAttackOBM: 1
+  attackPosObm: {fileID: 0}
+  whatIsEnemiesObm:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRangeObm: 0.5
+  damageObm: 20
 --- !u!95 &342494676
 Animator:
   serializedVersion: 3
@@ -7729,6 +7735,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorOBM: {fileID: 1905509188}
   timeBetweenAttackOBM: 1
+  attackPosObm: {fileID: 0}
+  whatIsEnemiesObm:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRangeObm: 0.5
+  damageObm: 20
 --- !u!95 &1905509188
 Animator:
   serializedVersion: 3
