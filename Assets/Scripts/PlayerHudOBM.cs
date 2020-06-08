@@ -41,7 +41,7 @@ public class PlayerHudOBM : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire2"))
         {
             TakeDamageOBM(20);
         }

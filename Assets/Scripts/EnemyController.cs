@@ -4,29 +4,42 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public bool enablePatrolObm = false;
+
     public float enemySpeedObm;
     public float distanceObm;
     public float checkRadiusObm;
+
+    public float healthObm;
 
     private bool movingRightObm = true;
 
     public Transform groundCheckObm;
     public LayerMask wallCheckObm;
+    public Animator animatorOBM;
 
     void Update()
     {
-        moveEnemyObm();
+        if (enablePatrolObm == true)
+        {
+            enemyPatrolObm();
+        }
+        if (healthObm <= 0)
+        {
+            Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+            Debug.Log("DEATH");
+        }
     }
 
-    private void moveEnemyObm()
+    private void enemyPatrolObm()
     {
         transform.Translate(Vector2.right * enemySpeedObm * Time.deltaTime);
 
-        RaycastHit2D groundInfoObm = Physics2D.Raycast(groundCheckObm.position, Vector2.down, distanceObm);
+        RaycastHit2D m_groundInfoObm = Physics2D.Raycast(groundCheckObm.position, Vector2.down, distanceObm);
 
         bool m_isWallObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, wallCheckObm);
 
-        if (groundInfoObm.collider == false || m_isWallObm == true)
+        if (m_groundInfoObm.collider == false || m_isWallObm == true)
         {
             if (movingRightObm == true)
             {
@@ -39,5 +52,12 @@ public class EnemyController : MonoBehaviour
                 movingRightObm = true;
             }
         }
+    }
+
+    public void TakeDamageObm(int a_takeDamageObm)
+    {
+        healthObm -= a_takeDamageObm;
+        Debug.Log("pp");
+    
     }
 }

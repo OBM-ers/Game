@@ -9,26 +9,38 @@ public class MeleeCombat : MonoBehaviour
     private float timerOBM;
     public float timeBetweenAttackOBM;
 
+    public Transform attackPosObm;
+    public LayerMask whatIsEnemiesObm;
+    public float attackRangeObm;
+    public int damageObm;
+
 
     // Update is called once per frame
     void Update()
     {
-        timerOBM -= Time.deltaTime;
-
         if(timerOBM <= 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetButtonDown("Fire1"))
             {
-                AttackOBM();
+                Collider2D[] enemiesToDamageObm = Physics2D.OverlapCircleAll(attackPosObm.position, attackRangeObm, whatIsEnemiesObm);
+                for (int i = 0; i < enemiesToDamageObm.Length; i++)
+                {
+                    enemiesToDamageObm[i].GetComponent<EnemyController>().TakeDamageObm(damageObm);
+                }
+                AttackAnimOBM();
                 timerOBM = timeBetweenAttackOBM;
             }
-            
         }
-
-        
+        timerOBM -= Time.deltaTime;
     }
 
-    private void AttackOBM()
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPosObm.position, attackRangeObm);
+    }
+
+    private void AttackAnimOBM()
     {
         animatorOBM.SetTrigger("attack");
     }
