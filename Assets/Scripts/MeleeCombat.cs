@@ -11,8 +11,8 @@ public class MeleeCombat : MonoBehaviour
 
     public Transform attackPosObm;
     public LayerMask whatIsEnemiesObm;
-    public float attackRangeObm;
-    public int damageObm;
+    public float attackRangeObm = 0.5f;
+    public int damageObm = 20;
 
 
     // Update is called once per frame
