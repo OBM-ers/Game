@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private bool movingRightObm = true;
 
     public Transform groundCheckObm;
+    public ParticleSystem bloodParticlesObm;
     public LayerMask wallCheckObm;
     public Animator animatorOBM;
 
@@ -57,6 +58,9 @@ public class EnemyController : MonoBehaviour
     public void TakeDamageObm(int a_takeDamageObm)
     {
         healthObm -= a_takeDamageObm;
+        var main = bloodParticlesObm.main;
+        main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
+        bloodParticlesObm.Play();
         Debug.Log("pp");
     
     }
