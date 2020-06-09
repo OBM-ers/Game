@@ -20,6 +20,7 @@ public class PlayerCollisionOBM : MonoBehaviour
             playerObm.position = spawnObm.position;
         }
 
+        //Add soul amount
         if (soulCollectedObm == true)
         {
             soulAmountIntegerObm++;

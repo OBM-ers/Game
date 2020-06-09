@@ -18,6 +18,7 @@ public class PlayerHudOBM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Set health and energy
         currentHealthOBM = maxValuesOBM;
         healthBarSliderOBM.SetMaxHealthOBM(maxValuesOBM);
 
@@ -37,6 +38,7 @@ public class PlayerHudOBM : MonoBehaviour
             if(timerOBM < 0)
             {
                 RechargeEnergyOBM(20);
+                //reset recharge time to 2 seconds
                 timerOBM = rechargeTimeOBM;
             }
         }
@@ -58,18 +60,21 @@ public class PlayerHudOBM : MonoBehaviour
     //Methods
     void TakeDamageOBM(int a_damageOBM)
     {
+        //Health decreases
         currentHealthOBM -= a_damageOBM;
         healthBarSliderOBM.SetHealthOBM(currentHealthOBM);
     }
 
     void UseEnergyOBM(int a_useEnergyOBM)
     {
+        //Energy decreases
         currentEnergyOBM -= a_useEnergyOBM;
         energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
 
     void RechargeEnergyOBM(int a_rechargeEnergyOBM)
     {
+        //energy increases
         currentEnergyOBM += a_rechargeEnergyOBM;
         energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
