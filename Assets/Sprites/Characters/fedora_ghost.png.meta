@@ -1,43 +1,76 @@
 fileFormatVersion: 2
-guid: def6648d58ee7584498c1d95de35b773
+guid: f14080d166227c640b19edd5da973fdc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8168879882605983680
-    second: randombystander_0
+      213: -1485636776696535284
+    second: fedora_ghost_0
   - first:
-      213: -555441064321646181
-    second: randombystander_1
+      213: 674982799113579791
+    second: fedora_ghost_1
   - first:
-      213: -195335391408336801
-    second: randombystander_2
+      213: -4165449226776506938
+    second: fedora_ghost_2
   - first:
-      213: 1254366703981541820
-    second: randombystander_3
+      213: 3301760235312661328
+    second: fedora_ghost_3
   - first:
-      213: -3986667031402679236
-    second: randombystander_4
+      213: 5989257466297092674
+    second: fedora_ghost_4
   - first:
-      213: -1927744571183962953
-    second: randombystander_5
+      213: -5356860341923724607
+    second: fedora_ghost_5
   - first:
-      213: -2687430525702762431
-    second: randombystander_6
+      213: -4415666519668891364
+    second: fedora_ghost_6
   - first:
-      213: 5001364787148884173
-    second: randombystander_7
+      213: 6560171076250973629
+    second: fedora_ghost_7
   - first:
-      213: 7631471780462733284
-    second: randombystander_8
+      213: -2035177020795653402
+    second: fedora_ghost_8
   - first:
-      213: 7141258793522751435
-    second: randombystander_9
+      213: 193763334448620579
+    second: fedora_ghost_9
   - first:
-      213: 4279299608805398067
-    second: randombystander_10
+      213: -5010662526841127993
+    second: fedora_ghost_10
   - first:
-      213: -6079056607965482919
-    second: randombystander_11
+      213: -8835767432724009744
+    second: fedora_ghost_0
+  - first:
+      213: -2558806764373347682
+    second: fedora_ghost_1
+  - first:
+      213: -2784566408986969767
+    second: fedora_ghost_2
+  - first:
+      213: -5442521966025551388
+    second: fedora_ghost_3
+  - first:
+      213: -5435662347094491396
+    second: fedora_ghost_4
+  - first:
+      213: -1685468966489448589
+    second: fedora_ghost_5
+  - first:
+      213: 2750648772557351766
+    second: fedora_ghost_6
+  - first:
+      213: -5637550289762845508
+    second: fedora_ghost_7
+  - first:
+      213: -7487464009207282328
+    second: fedora_ghost_8
+  - first:
+      213: -7109871616069624692
+    second: fedora_ghost_9
+  - first:
+      213: -5585400495572329761
+    second: fedora_ghost_10
+  - first:
+      213: -472495436256405243
+    second: fedora_ghost_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,7 +132,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -120,22 +153,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -147,7 +168,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -159,7 +180,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: randombystander_0
+      name: fedora_ghost_0
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c7709ff8f0bd5170800000000000000
-      internalID: 8168879882605983680
+      spriteID: 0fc2586755c016580800000000000000
+      internalID: -8835767432724009744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_1
+      name: fedora_ghost_1
       rect:
         serializedVersion: 2
         x: 15
@@ -194,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b91817b7b4daa48f0800000000000000
-      internalID: -555441064321646181
+      spriteID: e92f8a01eca4d7cd0800000000000000
+      internalID: -2558806764373347682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_2
+      name: fedora_ghost_2
       rect:
         serializedVersion: 2
         x: 30
@@ -215,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f505b071f770a4df0800000000000000
-      internalID: -195335391408336801
+      spriteID: 959b8d2ba9b3b59d0800000000000000
+      internalID: -2784566408986969767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_3
+      name: fedora_ghost_3
       rect:
         serializedVersion: 2
         x: 45
@@ -236,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb9b5e01fd7686110800000000000000
-      internalID: 1254366703981541820
+      spriteID: 4e159cc8b174874b0800000000000000
+      internalID: -5442521966025551388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_4
+      name: fedora_ghost_4
       rect:
         serializedVersion: 2
         x: 60
@@ -257,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c347b7b05738ca8c0800000000000000
-      internalID: -3986667031402679236
+      spriteID: cfe777a05e5a094b0800000000000000
+      internalID: -5435662347094491396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_5
+      name: fedora_ghost_5
       rect:
         serializedVersion: 2
         x: 75
@@ -278,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b464e0b6864f35e0800000000000000
-      internalID: -1927744571183962953
+      spriteID: 37f937ca7e20c98e0800000000000000
+      internalID: -1685468966489448589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_6
+      name: fedora_ghost_6
       rect:
         serializedVersion: 2
         x: 90
@@ -299,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14012fcec2454bad0800000000000000
-      internalID: -2687430525702762431
+      spriteID: 65b252e2c744c2620800000000000000
+      internalID: 2750648772557351766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_7
+      name: fedora_ghost_7
       rect:
         serializedVersion: 2
         x: 105
@@ -320,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc8082a86ca686540800000000000000
-      internalID: 5001364787148884173
+      spriteID: cbcf84761e563c1b0800000000000000
+      internalID: -5637550289762845508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_8
+      name: fedora_ghost_8
       rect:
         serializedVersion: 2
         x: 120
@@ -341,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e726eba62f68e960800000000000000
-      internalID: 7631471780462733284
+      spriteID: 8658da6672f271890800000000000000
+      internalID: -7487464009207282328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_9
+      name: fedora_ghost_9
       rect:
         serializedVersion: 2
         x: 135
@@ -362,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc7ee056909da1360800000000000000
-      internalID: 7141258793522751435
+      spriteID: c8c99855f69a45d90800000000000000
+      internalID: -7109871616069624692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_10
+      name: fedora_ghost_10
       rect:
         serializedVersion: 2
         x: 150
@@ -383,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 336505e4250236b30800000000000000
-      internalID: 4279299608805398067
+      spriteID: fdade1d87dbac72b0800000000000000
+      internalID: -5585400495572329761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: randombystander_11
+      name: fedora_ghost_11
       rect:
         serializedVersion: 2
         x: 165
@@ -404,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 950f9b8293ad2aba0800000000000000
-      internalID: -6079056607965482919
+      spriteID: 50991f377eb5179f0800000000000000
+      internalID: -472495436256405243
       vertices: []
       indices: 
       edges: []
