@@ -7149,6 +7149,7 @@ MonoBehaviour:
   distanceObm: 10
   checkRadiusObm: 0.1
   healthObm: 100
+  damageObm: 0
   groundCheckObm: {fileID: 1610062697}
   bloodParticlesObm: {fileID: 2110240936}
   wallCheckObm:
@@ -8442,7 +8443,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 61009b10e0ad642459cb312df1273302, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.0650022}
@@ -8610,6 +8611,7 @@ MonoBehaviour:
   distanceObm: 10
   checkRadiusObm: 0.1
   healthObm: 100
+  damageObm: 10
   groundCheckObm: {fileID: 162392290}
   bloodParticlesObm: {fileID: 468498711}
   wallCheckObm:

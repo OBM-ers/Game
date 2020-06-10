@@ -56,7 +56,7 @@ public class PlayerHudOBM : MonoBehaviour
     }
 
     //Methods
-    void TakeDamageOBM(int a_damageOBM)
+    public void TakeDamageOBM(int a_damageOBM)
     {
         currentHealthOBM -= a_damageOBM;
         healthBarSliderOBM.SetHealthOBM(currentHealthOBM);

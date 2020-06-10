@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
 
     public float healthObm;
 
+    public int damageObm;
+
     private bool movingRightObm = true;
 
     public Transform groundCheckObm;
@@ -62,6 +64,14 @@ public class EnemyController : MonoBehaviour
         main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
         Debug.Log("pp");
-    
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            Debug.Log("reeeeeeeeeee");
+            collision.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+        }
     }
 }
