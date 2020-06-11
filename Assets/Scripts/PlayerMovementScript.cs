@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO.Ports;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
+
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    //string comPortObm = "COM3";
+    SerialPort ControllerDataObm = new SerialPort("COM3", 9600);
     private Rigidbody2D playerRigidbodyObm;
     // Input variables
     private float xInputObm = 0f;
@@ -21,10 +28,18 @@ public class PlayerMovementScript : MonoBehaviour
     public LayerMask whatIsGroundObm;
     // Flip character variable
     private bool facingrightObm = true;
+    //Controller variables
+    public bool controllerEnabledObm = false;
 
     void Awake()
     {
         playerRigidbodyObm = GetComponent<Rigidbody2D>();
+        ControllerDataObm.Open();
+        ControllerDataObm.ReadTimeout = 10;//10 is the sweetspot
+        if (ControllerDataObm.IsOpen)
+        {
+            controllerEnabledObm = true;
+        }
     }
 
     void Update()
@@ -40,7 +55,23 @@ public class PlayerMovementScript : MonoBehaviour
     private void MoveObm()
     {
         // MOVE
-        xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
+        // MOVE
+        if (controllerEnabledObm)
+        {
+            if (ControllerDataObm.ReadLine() == "1" || ControllerDataObm.ReadLine() == "-1")
+            {
+                xInputObm = GetFLoatObm(ControllerDataObm.ReadLine(), 0.0f) * runSpeedObm * Time.fixedDeltaTime;
+                Debug.Log("Input: " + xInputObm);
+            }
+
+            Debug.Log("Nothing");
+        }
+        else
+        {
+            xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
+            Debug.Log(xInputObm);
+        }
+
         Vector3 targetVelocityObm = new Vector2(xInputObm * 10f, playerRigidbodyObm.velocity.y);
         playerRigidbodyObm.velocity = Vector3.SmoothDamp(playerRigidbodyObm.velocity, targetVelocityObm, ref VelocityObm, movementSmoothingObm);
         // ANIMATION
@@ -67,13 +98,34 @@ public class PlayerMovementScript : MonoBehaviour
 
     }
 
+    private float GetFLoatObm(string stringValueObm, float defaultValueObm)
+    {
+        float resultObm = defaultValueObm;
+        float.TryParse(stringValueObm, out resultObm);
+
+        return resultObm;
+    }
+
     private void JumpObm()
     {
-        if (isGroundedObm == true && Input.GetButtonDown("Jump"))
+        if (controllerEnabledObm)
         {
-            isGroundedObm = false;
-            playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
+            if (isGroundedObm == true && ControllerDataObm.ReadLine() == "5")
+            {
+                //Controller Jump
+                isGroundedObm = false;
+                playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
+            }
         }
+        else
+        {
+            if (isGroundedObm == true && Input.GetButtonDown("Jump"))
+            {
+                isGroundedObm = false;
+                playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
+            }
+        }
+
     }
 
     private void flipObm()
