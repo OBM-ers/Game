@@ -7054,7 +7054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &625236939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7654,7 +7654,7 @@ GameObject:
   - component: {fileID: 1404729494}
   - component: {fileID: 1404729493}
   - component: {fileID: 1404729496}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Weapon_pickup
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -7674,7 +7674,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49586415, y: -0.044719815}
+  m_Offset: {x: 0.48051924, y: -0.06518376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7685,7 +7685,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1058183, y: 0.9428928}
+  m_Size: {x: 1.0751284, y: 0.9019649}
   m_EdgeRadius: 0
 --- !u!212 &1404729494
 SpriteRenderer:
@@ -7745,8 +7745,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404729492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86, y: -1.483, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.86000013, y: -1.483, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7766,6 +7766,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordObm: {fileID: 1548454539}
   scytheObm: {fileID: 288145051}
+  spriteRendererObm: {fileID: 1404729494}
+  swordSpriteObm: {fileID: 712035800519618848, guid: e5e1b1da5789e214e9c71600a96cb241,
+    type: 3}
+  scytheSpriteObm: {fileID: 3700810548614518524, guid: 9b263d8fd212f404eaba43440f155985,
+    type: 3}
 --- !u!1 &1484312895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,7 +8288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1995518123
 RectTransform:
   m_ObjectHideFlags: 0
