@@ -9,8 +9,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    //string comPortObm = "COM3";
-    SerialPort ControllerDataObm = new SerialPort("COM3", 9600);
+    SerialPort ControllerDataObm;
     private Rigidbody2D playerRigidbodyObm;
     // Input variables
     private float xInputObm = 0f;
@@ -33,13 +32,22 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Awake()
     {
-        playerRigidbodyObm = GetComponent<Rigidbody2D>();
-        ControllerDataObm.Open();
-        ControllerDataObm.ReadTimeout = 10;//10 is the sweetspot
-        if (ControllerDataObm.IsOpen)
-        {
-            controllerEnabledObm = true;
+        //string comPortObm = "COM3";
+        try { 
+            ControllerDataObm = new SerialPort("COM3", 9600);
+            ControllerDataObm.ReadTimeout = 10;//10 is the sweetspot
+            ControllerDataObm.Open();
+            if (ControllerDataObm.IsOpen)
+            {
+                controllerEnabledObm = true;
+            }     
         }
+        catch
+        {           
+        }
+
+        playerRigidbodyObm = GetComponent<Rigidbody2D>();
+     
     }
 
     void Update()
@@ -54,7 +62,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void MoveObm()
     {
-        // MOVE
+
         // MOVE
         if (controllerEnabledObm)
         {
@@ -112,9 +120,11 @@ public class PlayerMovementScript : MonoBehaviour
         {
             if (isGroundedObm == true && ControllerDataObm.ReadLine() == "5")
             {
+                
                 //Controller Jump
                 isGroundedObm = false;
                 playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
+                Debug.Log(jumpSpeedObm);
             }
         }
         else
