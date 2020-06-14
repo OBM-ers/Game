@@ -11,6 +11,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     SerialPort ControllerDataObm;
     private Rigidbody2D playerRigidbodyObm;
+    public Animator animatorObm;
     // Input variables
     private float xInputObm = 0f;
     // Speed variables
@@ -42,9 +43,7 @@ public class PlayerMovementScript : MonoBehaviour
                 controllerEnabledObm = true;
             }     
         }
-        catch
-        {           
-        }
+        catch { }
 
         playerRigidbodyObm = GetComponent<Rigidbody2D>();
      
@@ -53,6 +52,8 @@ public class PlayerMovementScript : MonoBehaviour
     void Update()
     {
         JumpObm();
+        // ANIMATION
+        animatorObm.SetFloat("Speed", Mathf.Abs(xInputObm));
     }
 
     void FixedUpdate()
@@ -82,8 +83,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         Vector3 targetVelocityObm = new Vector2(xInputObm * 10f, playerRigidbodyObm.velocity.y);
         playerRigidbodyObm.velocity = Vector3.SmoothDamp(playerRigidbodyObm.velocity, targetVelocityObm, ref VelocityObm, movementSmoothingObm);
-        // ANIMATION
-
+        
         // JUMP
         isGroundedObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, whatIsGroundObm);
         if (playerRigidbodyObm.velocity.y < 0)
