@@ -7,7 +7,7 @@ public class gobMainMenuOBM : MonoBehaviour
 {
     public void GameHubOBM ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("HubScene");
     }
 
     public void QuitGameOBM ()
