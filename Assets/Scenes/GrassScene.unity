@@ -8606,6 +8606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92c259c40f8dda459ff5f8968c75151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorObm: {fileID: 2001485104}
   runSpeedObm: 40
   jumpSpeedObm: 400
   movementSmoothingObm: 0.05
@@ -8616,6 +8617,7 @@ MonoBehaviour:
   whatIsGroundObm:
     serializedVersion: 2
     m_Bits: 1
+  controllerEnabledObm: 0
 --- !u!1 &2034509848
 GameObject:
   m_ObjectHideFlags: 0
