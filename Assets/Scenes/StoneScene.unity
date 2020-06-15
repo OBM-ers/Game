@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: 336050664}
   - component: {fileID: 336050663}
   - component: {fileID: 336050662}
-  - component: {fileID: 336050661}
   - component: {fileID: 336050660}
   - component: {fileID: 336050659}
   - component: {fileID: 336050658}
@@ -486,22 +485,6 @@ MonoBehaviour:
   timerOBM: 0
   healthBarSliderOBM: {fileID: 0}
   energyBarSliderOBM: {fileID: 0}
---- !u!70 &336050661
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336050657}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c89d4660dbbc8674f8fe6d49ee53b461, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003384173, y: -0.17221934}
-  m_Size: {x: 0.7233496, y: 1.0306574}
-  m_Direction: 0
 --- !u!70 &336050662
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -511,12 +494,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 336050657}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 61009b10e0ad642459cb312df1273302, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0650022}
-  m_Size: {x: 0.9375, y: 1.2449956}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.9375, y: 1.375}
   m_Direction: 0
 --- !u!50 &336050663
 Rigidbody2D:
