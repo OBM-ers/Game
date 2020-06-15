@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GateScript : MonoBehaviour
 {
-    //public Animator transitionAnimatorObm;
     public string sceneNameObm;
+
+    public LayerMask layerMask;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && )
         {
-            Debug.Log("Scene");
+            Debug.Log(sceneNameObm);
             SceneManager.LoadScene(sceneNameObm);
         }
     }
