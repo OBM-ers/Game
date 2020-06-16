@@ -9,17 +9,19 @@ public class EnemyController : MonoBehaviour
     public float enemySpeedObm;
     public float distanceObm;
     public float checkRadiusObm;
-
+    public float startDazedTimeObm;
     public float healthObm;
 
     public int damageObm;
 
     private bool movingRightObm = true;
+    private float dazedTimeObm;
 
     public Transform groundCheckObm;
     public ParticleSystem bloodParticlesObm;
     public LayerMask wallCheckObm;
     public Animator animatorOBM;
+    public CameraShakeOBM cameraShakeObm;
 
     void Update()
     {
@@ -31,6 +33,14 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
             Debug.Log("DEATH");
+        }
+        if(dazedTimeObm <= 0)
+        {
+            enemySpeedObm = 1;
+        } else
+        {
+            enemySpeedObm = 0;
+            dazedTimeObm -= Time.deltaTime;
         }
     }
 
@@ -59,18 +69,18 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamageObm(int a_takeDamageObm)
     {
+        dazedTimeObm = startDazedTimeObm;
         healthObm -= a_takeDamageObm;
         var main = bloodParticlesObm.main;
         main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
-        Debug.Log("pp");
+        StartCoroutine(cameraShakeObm.shakeObm(.15f, .4f));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("reeeeeeeeeee");
             collision.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
         }
     }

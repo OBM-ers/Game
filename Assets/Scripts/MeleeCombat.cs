@@ -22,6 +22,7 @@ public class MeleeCombat : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                
                 Collider2D[] enemiesToDamageObm = Physics2D.OverlapCircleAll(attackPosObm.position, attackRangeObm, whatIsEnemiesObm);
                 for (int i = 0; i < enemiesToDamageObm.Length; i++)
                 {
