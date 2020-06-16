@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 1002796014}
   - component: {fileID: 1002796013}
   - component: {fileID: 1002796012}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tilemap_Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8744,7 +8744,7 @@ MonoBehaviour:
   checkRadiusObm: 0.1
   whatIsGroundObm:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8192
   controllerEnabledObm: 0
 --- !u!95 &1876563287
 Animator:
