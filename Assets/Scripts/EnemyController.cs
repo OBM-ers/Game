@@ -21,7 +21,14 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem bloodParticlesObm;
     public LayerMask wallCheckObm;
     public Animator animatorOBM;
-    public CameraShakeOBM cameraShakeObm;
+    private Rigidbody2D enemyRigidbodyObm;
+    private GameObject playerObm;
+
+    private void Awake()
+    {
+        enemyRigidbodyObm = GetComponent<Rigidbody2D>();
+        playerObm = GameObject.FindWithTag("Player");
+    }
 
     void Update()
     {
@@ -68,13 +75,17 @@ public class EnemyController : MonoBehaviour
     }
 
     public void TakeDamageObm(int a_takeDamageObm)
-    {
-        dazedTimeObm = startDazedTimeObm;
+    { 
+        //dazedTimeObm = startDazedTimeObm;
         healthObm -= a_takeDamageObm;
         var main = bloodParticlesObm.main;
         main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
-        StartCoroutine(cameraShakeObm.shakeObm(.15f, .4f));
+
+        if(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length < 0)
+        {
+            StartCoroutine(KnockbackObm(0.05f, 2f, playerObm.transform.localScale));
+        } 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -83,5 +94,25 @@ public class EnemyController : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
         }
+    }
+
+    public IEnumerator KnockbackObm(float knockDurationObm, float KnockbackPowerObm, Vector3 knockbackDirectionObm)
+    {
+        Debug.Log("ja");
+        Vector3 forceObm;
+        float timerObm = 0;
+        while ( knockDurationObm > timerObm)
+        {
+            forceObm = new Vector3(knockbackDirectionObm.x * -100, knockbackDirectionObm.y * KnockbackPowerObm, 0f);
+            
+            timerObm += Time.deltaTime;
+
+            enablePatrolObm = false;
+            enemyRigidbodyObm.AddForce(forceObm);
+        }
+
+        enablePatrolObm = true;
+
+        yield return 0;
     }
 }

@@ -635,7 +635,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   attackRangeObm: 1
-  damageObm: 50
+  damageObm: 25
 --- !u!95 &342494676
 Animator:
   serializedVersion: 3
@@ -14077,7 +14077,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   animatorOBM: {fileID: 61563120199988312}
-  cameraShakeObm: {fileID: 0}
 --- !u!50 &61563120199988319
 Rigidbody2D:
   serializedVersion: 4

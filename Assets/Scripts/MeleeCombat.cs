@@ -27,6 +27,7 @@ public class MeleeCombat : MonoBehaviour
                 for (int i = 0; i < enemiesToDamageObm.Length; i++)
                 {
                     enemiesToDamageObm[i].GetComponent<EnemyController>().TakeDamageObm(damageObm);
+                   
                 }
                 AttackAnimOBM();
                 timerOBM = timeBetweenAttackOBM;
