@@ -7,6 +7,7 @@ public class GateScript : MonoBehaviour
 {
     public string sceneNameObm;
     private bool visitSceneObm = false;
+    public Animator gateAnimatorObm;
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class GateScript : MonoBehaviour
         {
             Debug.Log("Enter");
             visitSceneObm = true;
+            gateAnimatorObm.SetTrigger("Enter");
         }
     }
 
@@ -31,6 +33,7 @@ public class GateScript : MonoBehaviour
         {
             Debug.Log("Exit");
             visitSceneObm = false;
+            gateAnimatorObm.SetTrigger("Exit");
         }
     }
 }
