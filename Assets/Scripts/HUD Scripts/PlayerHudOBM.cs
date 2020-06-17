@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerHudOBM : MonoBehaviour
@@ -43,11 +43,6 @@ public class PlayerHudOBM : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            TakeDamageOBM(20);
-        }
-
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if(currentEnergyOBM > 0)
@@ -63,16 +58,21 @@ public class PlayerHudOBM : MonoBehaviour
         //Health decreases
         currentHealthOBM -= a_damageOBM;
         healthBarSliderOBM.SetHealthOBM(currentHealthOBM);
+
+        if(currentHealthOBM <= 0)
+        {
+            Debug.Log("dead");
+        }
     }
 
-    void UseEnergyOBM(int a_useEnergyOBM)
+    public void UseEnergyOBM(int a_useEnergyOBM)
     {
         //Energy decreases
         currentEnergyOBM -= a_useEnergyOBM;
         energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
 
-    void RechargeEnergyOBM(int a_rechargeEnergyOBM)
+    public void RechargeEnergyOBM(int a_rechargeEnergyOBM)
     {
         //energy increases
         currentEnergyOBM += a_rechargeEnergyOBM;
