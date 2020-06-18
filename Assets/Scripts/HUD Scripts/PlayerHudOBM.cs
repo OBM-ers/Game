@@ -14,6 +14,7 @@ public class PlayerHudOBM : MonoBehaviour
 
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,12 @@ public class PlayerHudOBM : MonoBehaviour
                 //reset recharge time to 2 seconds
                 timerOBM = rechargeTimeOBM;
             }
+        }
+
+        if(currentHealthOBM <= 0)
+        {
+            gameObject.transform.position = spawnPoint.position;
+            currentHealthOBM = maxValuesOBM;
         }
 
         if (Input.GetButtonDown("Fire2"))
