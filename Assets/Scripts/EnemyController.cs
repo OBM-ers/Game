@@ -9,13 +9,11 @@ public class EnemyController : MonoBehaviour
     public float enemySpeedObm;
     public float distanceObm;
     public float checkRadiusObm;
-    public float startDazedTimeObm;
     public float healthObm;
 
     public int damageObm;
 
     private bool movingRightObm = true;
-    private float dazedTimeObm;
 
     public Transform groundCheckObm;
     public ParticleSystem bloodParticlesObm;
@@ -40,14 +38,6 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
             Debug.Log("DEATH");
-        }
-        if(dazedTimeObm <= 0)
-        {
-            enemySpeedObm = 1;
-        } else
-        {
-            enemySpeedObm = 0;
-            dazedTimeObm -= Time.deltaTime;
         }
     }
 
@@ -76,39 +66,31 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamageObm(int a_takeDamageObm)
     { 
-        //dazedTimeObm = startDazedTimeObm;
         healthObm -= a_takeDamageObm;
-        var main = bloodParticlesObm.main;
-        main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
+        var m_mainObm = bloodParticlesObm.main;
+        m_mainObm.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
 
-        if(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length < 0)
-        {
-            StartCoroutine(KnockbackObm(0.05f, 2f, playerObm.transform.localScale));
-        } 
+        StartCoroutine(KnockbackObm(0.05f, 15f, playerObm.transform.localScale));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D a_collisionObm)
     {
-        if (collision.gameObject.name == "Player")
+        if (a_collisionObm.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+            a_collisionObm.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
         }
     }
 
-    public IEnumerator KnockbackObm(float knockDurationObm, float KnockbackPowerObm, Vector3 knockbackDirectionObm)
+    public IEnumerator KnockbackObm(float a_knockDurationObm, float a_KnockbackPowerObm, Vector3 a_knockbackDirectionObm)
     {
-        Debug.Log("ja");
-        Vector3 forceObm;
-        float timerObm = 0;
-        while ( knockDurationObm > timerObm)
-        {
-            forceObm = new Vector3(knockbackDirectionObm.x * -100, knockbackDirectionObm.y * KnockbackPowerObm, 0f);
-            
-            timerObm += Time.deltaTime;
+        float m_timerObm = 0;
+        enablePatrolObm = false;
 
-            enablePatrolObm = false;
-            enemyRigidbodyObm.AddForce(forceObm);
+        while (a_knockDurationObm > m_timerObm)
+        {
+            m_timerObm += Time.deltaTime;
+            enemyRigidbodyObm.AddForce(new Vector3(a_knockbackDirectionObm.x * 23, a_knockbackDirectionObm.y * a_KnockbackPowerObm, 0f));
         }
 
         enablePatrolObm = true;
