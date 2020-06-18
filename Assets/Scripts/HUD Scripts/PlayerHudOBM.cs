@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerHudOBM : MonoBehaviour
 {
     public int maxValuesOBM = 100;
-    public int currentHealthOBM;
-    public int currentEnergyOBM;
+    private int currentHealthOBM;
+    private int currentEnergyOBM;
 
     private float rechargeTimeOBM = 2;
-    public float timerOBM;
+    private float timerOBM;
 
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
@@ -18,6 +18,8 @@ public class PlayerHudOBM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameObject.Find("GameOverCanvas").SetActive(false);
+
         //Set health and energy
         currentHealthOBM = maxValuesOBM;
         healthBarSliderOBM.SetMaxHealthOBM(maxValuesOBM);
@@ -58,10 +60,12 @@ public class PlayerHudOBM : MonoBehaviour
         //Health decreases
         currentHealthOBM -= a_damageOBM;
         healthBarSliderOBM.SetHealthOBM(currentHealthOBM);
+        Debug.Log("Health: " + currentHealthOBM);
 
-        if(currentHealthOBM <= 0)
+        if (currentHealthOBM <= 0)
         {
             Debug.Log("dead");
+            //GameObject.Find("GameOverCanvas").SetActive(true);
         }
     }
 
