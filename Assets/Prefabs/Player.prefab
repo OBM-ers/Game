@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7475975544991090253}
   - component: {fileID: 7475975544991090249}
   - component: {fileID: 7475975544991090248}
-  - component: {fileID: 7475975544991090251}
   - component: {fileID: 7475975544991090254}
   - component: {fileID: 7475975544991090250}
   m_Layer: 11
@@ -142,27 +141,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 61009b10e0ad642459cb312df1273302, type: 2}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0650022}
-  m_Size: {x: 0.9375, y: 1.2449956}
-  m_Direction: 0
---- !u!70 &7475975544991090251
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7475975544991090258}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c89d4660dbbc8674f8fe6d49ee53b461, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003384173, y: -0.17221934}
-  m_Size: {x: 0.7233496, y: 1.0306574}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.9375, y: 1.375}
   m_Direction: 0
 --- !u!114 &7475975544991090254
 MonoBehaviour:
@@ -195,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92c259c40f8dda459ff5f8968c75151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorObm: {fileID: 0}
   runSpeedObm: 40
   jumpSpeedObm: 400
   movementSmoothingObm: 0.05
@@ -205,6 +189,7 @@ MonoBehaviour:
   whatIsGroundObm:
     serializedVersion: 2
     m_Bits: 1
+  controllerEnabledObm: 0
 --- !u!1 &7475975545712554486
 GameObject:
   m_ObjectHideFlags: 0
