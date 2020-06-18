@@ -172,12 +172,11 @@ MonoBehaviour:
   checkRadiusObm: 0.1
   healthObm: 100
   damageObm: 10
-  startDazedTimeObm: 0.6
   groundCheckObm: {fileID: 61563120245397287}
   bloodParticlesObm: {fileID: 61563120543106770}
   wallCheckObm:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8193
   animatorOBM: {fileID: 61563118904678364}
 --- !u!1 &61563120245397284
 GameObject:

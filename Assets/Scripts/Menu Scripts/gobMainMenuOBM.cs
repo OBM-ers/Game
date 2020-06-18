@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class gobMainMenuOBM : MonoBehaviour
 {
-    public void GameHubOBM ()
+    public void GameHubOBM()
     {
         SceneManager.LoadScene("HubScene");
     }
 
-    public void QuitGameOBM ()
+    public void QuitGameOBM()
     {
         Debug.Log("Quit");
         Application.Quit();

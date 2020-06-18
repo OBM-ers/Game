@@ -72,6 +72,7 @@ public class EnemyController : MonoBehaviour
         bloodParticlesObm.Play();
 
         StartCoroutine(KnockbackObm(0.05f, 15f, playerObm.transform.localScale));
+        Debug.Log("HIT");
     }
 
     private void OnCollisionEnter2D(Collision2D a_collisionObm)
