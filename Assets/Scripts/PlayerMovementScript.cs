@@ -78,7 +78,7 @@ public class PlayerMovementScript : MonoBehaviour
         else
         {
             xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
-            Debug.Log(xInputObm);
+            //Debug.Log(xInputObm);
         }
 
         Vector3 targetVelocityObm = new Vector2(xInputObm * 10f, playerRigidbodyObm.velocity.y);
