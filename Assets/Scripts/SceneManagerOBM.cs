@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerOBM : MonoBehaviour
 {
+    public GameObject timerObm;
+    private bool continueGameObm = false;
+
+    void Update()
+    {
+        if (continueGameObm == true)
+        {
+            timerObm.GetComponent<TimerOBM>().RestartTimerObm();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            continueGameObm = false;
+        }
+    }
+
     public void ExitToMenu()
     {
         SceneManager.LoadScene("MenuScene");
@@ -12,6 +25,6 @@ public class SceneManagerOBM : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene("SnowScene");
+        continueGameObm = true;
     }
 }

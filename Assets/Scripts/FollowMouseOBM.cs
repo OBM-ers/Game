@@ -8,33 +8,27 @@ public class FollowMouseOBM : MonoBehaviour
 {
     private bool facingrightObm = true;
 
-    // Update is called once per frame
-    void Update()
+    public void OnMouseOverExitObm()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(
-        mousePosition.x - transform.position.x,
-        mousePosition.y - transform.position.y
-        );
-
-        transform.right = direction;
-
-        //transform.right = direction;
-        /*if (mousePosition.x > transform.position.x && facingrightObm == true)
+        if(facingrightObm == false)
         {
+            //facingrightObm = !facingrightObm;
             Vector2 localScale = gameObject.transform.localScale;
-            localScale.x = 1;
+            localScale.x *= -1;
             transform.localScale = localScale;
             facingrightObm = true;
         }
-        else
+    }
+
+    public void OnMouseOverContinueObm()
+    {
+        if (facingrightObm == true)
         {
-            facingrightObm = !facingrightObm;
+            //facingrightObm = !facingrightObm;
             Vector2 localScale = gameObject.transform.localScale;
-            localScale.x = -1;
+            localScale.x *= -1;
             transform.localScale = localScale;
             facingrightObm = false;
-        }*/
+        }
     }
 }

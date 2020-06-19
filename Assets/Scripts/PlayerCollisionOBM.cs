@@ -22,7 +22,7 @@ public class PlayerCollisionOBM : MonoBehaviour
         {
             playerObm.position = spawnObm.position;
             fallThroughMapObm = true;
-            Debug.Log("Tokkie");
+            //Debug.Log("Tokkie");
         }
 
         //Add soul amount

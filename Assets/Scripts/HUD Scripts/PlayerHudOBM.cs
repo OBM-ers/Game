@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerHudOBM : MonoBehaviour
 {
+    public GameObject gameOverScreenObm;
+
     public int maxValuesOBM = 100;
     private int currentHealthOBM;
     private int currentEnergyOBM;
@@ -18,7 +20,7 @@ public class PlayerHudOBM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject.Find("GameOverCanvas").SetActive(false);
+        gameOverScreenObm.SetActive(false);
 
         //Set health and energy
         currentHealthOBM = maxValuesOBM;
@@ -65,6 +67,7 @@ public class PlayerHudOBM : MonoBehaviour
         if (currentHealthOBM <= 0)
         {
             Debug.Log("dead");
+            gameOverScreenObm.SetActive(true);
             //GameObject.Find("GameOverCanvas").SetActive(true);
         }
     }

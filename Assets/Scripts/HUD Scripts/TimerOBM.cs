@@ -9,18 +9,19 @@ public class TimerOBM : MonoBehaviour
 {
     public Text timerTextOBM;
 
-    private float startTimeOBM = 0;
+    private float startTimeOBM = 0f;
+    private float actualTimeTakenOBM = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        startTimeOBM = Time.time;
+        startTimeOBM = Time.timeSinceLevelLoad;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float actualTimeTakenOBM = startTimeOBM + Time.time;
+        actualTimeTakenOBM = startTimeOBM + Time.timeSinceLevelLoad;
 
         string minutesOBM = ((int)actualTimeTakenOBM / 60).ToString("00");
         string secondsOBM = (actualTimeTakenOBM % 60).ToString("f2");
@@ -35,5 +36,10 @@ public class TimerOBM : MonoBehaviour
         {
             timerTextOBM.text = minutesOBM + ":" + secondsOBM;
         }
+    }
+
+    public void RestartTimerObm()
+    {
+        startTimeOBM = Time.timeSinceLevelLoad;
     }
 }
