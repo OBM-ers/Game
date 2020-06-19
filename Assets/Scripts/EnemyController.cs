@@ -9,7 +9,6 @@ public class EnemyController : MonoBehaviour
     public float enemySpeedObm;
     public float distanceObm;
     public float checkRadiusObm;
-
     public float healthObm;
 
     public int damageObm;
@@ -20,6 +19,14 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem bloodParticlesObm;
     public LayerMask wallCheckObm;
     public Animator animatorOBM;
+    private Rigidbody2D enemyRigidbodyObm;
+    private GameObject playerObm;
+
+    private void Awake()
+    {
+        enemyRigidbodyObm = GetComponent<Rigidbody2D>();
+        playerObm = GameObject.FindWithTag("Player");
+    }
 
     void Update()
     {
@@ -58,20 +65,36 @@ public class EnemyController : MonoBehaviour
     }
 
     public void TakeDamageObm(int a_takeDamageObm)
-    {
+    { 
         healthObm -= a_takeDamageObm;
-        var main = bloodParticlesObm.main;
-        main.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
+        var m_mainObm = bloodParticlesObm.main;
+        m_mainObm.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
-        Debug.Log("pp");
+
+        StartCoroutine(KnockbackObm(0.05f, 15f, playerObm.transform.localScale));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D a_collisionObm)
     {
-        if (collision.gameObject.name == "Player")
+        if (a_collisionObm.gameObject.name == "Player")
         {
-            Debug.Log("reeeeeeeeeee");
-            collision.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+            a_collisionObm.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
         }
+    }
+
+    public IEnumerator KnockbackObm(float a_knockDurationObm, float a_KnockbackPowerObm, Vector3 a_knockbackDirectionObm)
+    {
+        float m_timerObm = 0;
+        enablePatrolObm = false;
+
+        while (a_knockDurationObm > m_timerObm)
+        {
+            m_timerObm += Time.deltaTime;
+            enemyRigidbodyObm.AddForce(new Vector3(a_knockbackDirectionObm.x * 23, a_knockbackDirectionObm.y * a_KnockbackPowerObm, 0f));
+        }
+
+        enablePatrolObm = true;
+
+        yield return 0;
     }
 }
