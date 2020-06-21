@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     public float healthObm;
 
     public int damageObm;
+    private float elapsedCollisionTimeObm = 1;
+    private float necessaryCollisionTimeObm = 1;
 
     private bool movingRightObm = true;
 
@@ -76,11 +78,17 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(KnockbackObm(0.05f, 15f, playerObm.transform.localScale));
     }
 
-    private void OnCollisionEnter2D(Collision2D a_collisionObm)
+    private void OnCollisionStay2D(Collision2D a_collisionObm)
     {
         if (a_collisionObm.gameObject.name == "Player")
         {
-            a_collisionObm.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+            elapsedCollisionTimeObm += Time.fixedDeltaTime;
+            if (elapsedCollisionTimeObm > necessaryCollisionTimeObm)
+            {
+                a_collisionObm.gameObject.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+                elapsedCollisionTimeObm = 0;
+            }
+            
         }
     }
 

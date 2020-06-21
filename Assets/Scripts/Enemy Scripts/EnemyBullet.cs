@@ -7,10 +7,20 @@ public class EnemyBullet : MonoBehaviour
     public float bulletSpeedObm;
     public int bulletDamageObm;
     public Rigidbody2D rigidbodyBulletObm;
+    private bool fireRightObm;
+    public GameObject shootingEnemy;
 
     void Start()
     {
-        rigidbodyBulletObm.velocity = transform.right * bulletSpeedObm;
+        fireRightObm = shootingEnemy.GetComponent<EnemyFire>().shootRight;
+        if (fireRightObm)
+        {
+            rigidbodyBulletObm.velocity = transform.right * bulletSpeedObm;
+        } else if (!fireRightObm)
+        {
+            rigidbodyBulletObm.velocity = -transform.right * bulletSpeedObm;
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collisionObm)

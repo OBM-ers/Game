@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 255150997448432828}
   - component: {fileID: -8393172261326944362}
   m_Layer: 10
-  m_Name: Plant Bullet
+  m_Name: Plant_bullet_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9155596732599635909}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0.00000013113416}
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0.0000011802073}
   m_LocalPosition: {x: 7.5790005, y: -0.58404475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5ad181a944ff89a4c97ecb3996abfb09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.625, y: 0.3125}
@@ -136,3 +136,5 @@ MonoBehaviour:
   bulletSpeedObm: 2
   bulletDamageObm: 20
   rigidbodyBulletObm: {fileID: 7453558731752328086}
+  shootingEnemy: {fileID: 2465756697468128375, guid: d93be6b6b95fc7b4bb93215b7b85c154,
+    type: 3}
