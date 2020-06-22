@@ -1,16 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerHudOBM : MonoBehaviour
 {
+    public GameObject gameOverScreenObm;
+
     public int maxValuesOBM = 100;
-    public int currentHealthOBM;
-    public int currentEnergyOBM;
+    private int currentHealthOBM;
+    private int currentEnergyOBM;
 
     private float rechargeTimeOBM = 2;
-    public float timerOBM;
+    private float timerOBM;
 
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
@@ -18,6 +20,8 @@ public class PlayerHudOBM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOverScreenObm.SetActive(false);
+
         //Set health and energy
         currentHealthOBM = maxValuesOBM;
         healthBarSliderOBM.SetMaxHealthOBM(maxValuesOBM);
@@ -43,11 +47,6 @@ public class PlayerHudOBM : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            TakeDamageOBM(20);
-        }
-
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if(currentEnergyOBM > 0)
@@ -63,16 +62,24 @@ public class PlayerHudOBM : MonoBehaviour
         //Health decreases
         currentHealthOBM -= a_damageOBM;
         healthBarSliderOBM.SetHealthOBM(currentHealthOBM);
+        Debug.Log("Health: " + currentHealthOBM);
+
+        if (currentHealthOBM <= 0)
+        {
+            Debug.Log("dead");
+            gameOverScreenObm.SetActive(true);
+            //GameObject.Find("GameOverCanvas").SetActive(true);
+        }
     }
 
-    void UseEnergyOBM(int a_useEnergyOBM)
+    public void UseEnergyOBM(int a_useEnergyOBM)
     {
         //Energy decreases
         currentEnergyOBM -= a_useEnergyOBM;
         energyBarSliderOBM.SetEnergyOBM(currentEnergyOBM);
     }
 
-    void RechargeEnergyOBM(int a_rechargeEnergyOBM)
+    public void RechargeEnergyOBM(int a_rechargeEnergyOBM)
     {
         //energy increases
         currentEnergyOBM += a_rechargeEnergyOBM;

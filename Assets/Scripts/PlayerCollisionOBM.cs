@@ -8,16 +8,21 @@ public class PlayerCollisionOBM : MonoBehaviour
     public Text soulAmountObm;
 
     public Rigidbody2D playerObm;
+    public GameObject playerObjectObm;
     public Transform spawnObm;
     private bool soulCollectedObm = false;
     private int soulAmountIntegerObm = 0;
+    private bool fallThroughMapObm = false;
+    private int damage = 20;
 
     void FixedUpdate()
     {
         //Death
-        if (playerObm.position.y < -25f)
+        if (playerObm.position.y <= -25)
         {
             playerObm.position = spawnObm.position;
+            fallThroughMapObm = true;
+            //Debug.Log("Tokkie");
         }
 
         //Add soul amount
@@ -26,6 +31,15 @@ public class PlayerCollisionOBM : MonoBehaviour
             soulAmountIntegerObm++;
             soulAmountObm.text = soulAmountIntegerObm.ToString("00");
             soulCollectedObm = false;
+        }
+    }
+
+    void Update()
+    {
+        if (fallThroughMapObm == true)
+        {
+            playerObjectObm.GetComponent<PlayerHudOBM>().TakeDamageOBM(damage);
+            fallThroughMapObm = false;
         }
     }
 
