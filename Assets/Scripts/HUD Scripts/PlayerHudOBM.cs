@@ -21,6 +21,7 @@ public class PlayerHudOBM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         gameOverScreenObm.SetActive(false);
 
         //Set health and energy
@@ -69,6 +70,7 @@ public class PlayerHudOBM : MonoBehaviour
         {
             Debug.Log("dead");
             gameOverScreenObm.SetActive(true);
+            Time.timeScale = 0f;
             //GameObject.Find("GameOverCanvas").SetActive(true);
         }
     }

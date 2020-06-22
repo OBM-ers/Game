@@ -18,13 +18,18 @@ public class SceneManagerOBM : MonoBehaviour
         }
     }
 
-    public void ExitToMenu()
+    public void ExitToMenuObm()
     {
         SceneManager.LoadScene("MenuScene");
     }
 
-    public void ReloadScene()
+    public void ReloadSceneObm()
     {
         continueGameObm = true;
+    }
+
+    public void ExitToHubObm()
+    {
+        SceneManager.LoadScene("HubScene");
     }
 }
