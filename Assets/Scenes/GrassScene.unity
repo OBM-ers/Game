@@ -2471,6 +2471,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: healthBarSliderOBM
+      value: 
+      objectReference: {fileID: 2126651087}
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: energyBarSliderOBM
+      value: 
+      objectReference: {fileID: 37318671}
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 444704857}
     - target: {fileID: 7475975544991090255, guid: 7393575acfa7bf64caf3a182efbfdb2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2530,6 +2545,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475975545712554481, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: attackRangeObm
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475975546570212834, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: attackRangeObm
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7393575acfa7bf64caf3a182efbfdb2c, type: 3}
@@ -2687,6 +2712,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61563118904678361, guid: 457184e0de1321f489fff2b4de202add,
+        type: 3}
+      propertyPath: wallCheckObm.m_Bits
+      value: 9216
+      objectReference: {fileID: 0}
     - target: {fileID: 61563118904678365, guid: 457184e0de1321f489fff2b4de202add,
         type: 3}
       propertyPath: m_Name

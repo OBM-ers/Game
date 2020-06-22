@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
         m_mainObm.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
         hitSoundObm.Play();
-        StartCoroutine(KnockbackObm(0.05f, 20f, playerObm.transform.localScale));
+        StartCoroutine(KnockbackObm(0.03f, 15f, playerObm.transform.localScale));
     }
 
     private void OnCollisionStay2D(Collision2D a_collisionObm)
