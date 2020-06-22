@@ -9,6 +9,7 @@ public class PlayerCollisionOBM : MonoBehaviour
 
     public Rigidbody2D playerObm;
     public Transform spawnObm;
+    public AudioSource collectSoundObm;
     private bool soulCollectedObm = false;
     private int soulAmountIntegerObm = 0;
 
@@ -37,6 +38,7 @@ public class PlayerCollisionOBM : MonoBehaviour
         {
             Destroy(collectibleObm.gameObject);
             soulCollectedObm = true;
+            collectSoundObm.Play();
         }
     }
 }

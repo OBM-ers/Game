@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem bloodParticlesObm;
     public LayerMask wallCheckObm;
     public Animator animatorOBM;
+    public AudioSource hitSoundObm;
     private Rigidbody2D enemyRigidbodyObm;
     private GameObject playerObm;
 
@@ -74,8 +75,8 @@ public class EnemyController : MonoBehaviour
         var m_mainObm = bloodParticlesObm.main;
         m_mainObm.startDelay = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length / 2;
         bloodParticlesObm.Play();
-
-        StartCoroutine(KnockbackObm(0.05f, 15f, playerObm.transform.localScale));
+        hitSoundObm.Play();
+        StartCoroutine(KnockbackObm(0.05f, 20f, playerObm.transform.localScale));
     }
 
     private void OnCollisionStay2D(Collision2D a_collisionObm)
@@ -103,7 +104,7 @@ public class EnemyController : MonoBehaviour
         while (a_knockDurationObm > m_timerObm)
         {
             m_timerObm += Time.deltaTime;
-            enemyRigidbodyObm.AddForce(new Vector3(a_knockbackDirectionObm.x * 23, a_knockbackDirectionObm.y * a_KnockbackPowerObm, 0f));
+            enemyRigidbodyObm.AddForce(new Vector3(a_knockbackDirectionObm.x * 30, a_knockbackDirectionObm.y * a_KnockbackPowerObm, 0f));
         }
 
         if(enableEnablePatrolObm)
