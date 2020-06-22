@@ -16,6 +16,7 @@ public class PlayerHudOBM : MonoBehaviour
 
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
