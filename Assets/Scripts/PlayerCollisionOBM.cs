@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollisionOBM : MonoBehaviour
 {
     public Text soulAmountObm;
-
+    public Text soulsNeededTextObm;
     public Rigidbody2D playerObm;
     public GameObject playerObjectObm;
     public Transform spawnObm;
+    public float requiredSoulsObm;
     private bool soulCollectedObm = false;
     private int soulAmountIntegerObm = 0;
     private bool fallThroughMapObm = false;
     private int damage = 20;
+
+    private void Awake()
+    {
+        soulsNeededTextObm.text = requiredSoulsObm.ToString("00");
+    }
 
     void FixedUpdate()
     {
@@ -30,6 +37,12 @@ public class PlayerCollisionOBM : MonoBehaviour
             soulAmountIntegerObm++;
             soulAmountObm.text = soulAmountIntegerObm.ToString("00");
             soulCollectedObm = false;
+        }
+
+        //Go back to hub when found all souls
+        if (requiredSoulsObm == soulAmountIntegerObm)
+        {
+            SceneManager.LoadScene("HubScene");
         }
     }
 
