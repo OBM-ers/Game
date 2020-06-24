@@ -8,10 +8,17 @@ public class GateScript : MonoBehaviour
     public string sceneNameObm;
     private bool visitSceneObm = false;
     public Animator gateAnimatorObm;
+    public Animator animatorSceneObm;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) && visitSceneObm)
+        {
+            animatorSceneObm.SetTrigger("FadeOut");
+            Debug.Log(this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"));
+        }
+
+        if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
         {
             SceneManager.LoadScene(sceneNameObm);
         }

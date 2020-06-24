@@ -11,6 +11,7 @@ public class PlayerCollisionOBM : MonoBehaviour
     public Rigidbody2D playerObm;
     public GameObject playerObjectObm;
     public Transform spawnObm;
+    public Animator animatorSceneObm;
     public float requiredSoulsObm;
     private bool soulCollectedObm = false;
     private int soulAmountIntegerObm = 0;
@@ -42,7 +43,11 @@ public class PlayerCollisionOBM : MonoBehaviour
         //Go back to hub when found all souls
         if (requiredSoulsObm == soulAmountIntegerObm)
         {
-            SceneManager.LoadScene("HubScene");
+            animatorSceneObm.SetTrigger("FadeOut");
+            if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
+            {
+                SceneManager.LoadScene("HubScene");
+            }
         }
     }
 
