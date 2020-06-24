@@ -5,19 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerOBM : MonoBehaviour
 {
-    public GameObject timerObm;
-    private bool continueGameObm = false;
-
-    void Update()
-    {
-        if (continueGameObm == true)
-        {
-            timerObm.GetComponent<TimerOBM>().RestartTimerObm();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            continueGameObm = false;
-        }
-    }
-
     public void ExitToMenuObm()
     {
         SceneManager.LoadScene("MenuScene");
@@ -25,7 +12,8 @@ public class SceneManagerOBM : MonoBehaviour
 
     public void ReloadSceneObm()
     {
-        continueGameObm = true;
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
     public void ExitToHubObm()

@@ -70,8 +70,7 @@ public class PlayerHudOBM : MonoBehaviour
         {
             Debug.Log("dead");
             gameOverScreenObm.SetActive(true);
-            Time.timeScale = 0f;
-            //GameObject.Find("GameOverCanvas").SetActive(true);
+            Time.timeScale = 0.0001f;
         }
     }
 

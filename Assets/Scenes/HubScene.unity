@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40943324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.35, y: -21.53, z: -2.2880049}
+  m_LocalPosition: {x: -1.99, y: -0.36, z: -2.2880049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 38566996}
@@ -636,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43192683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.35, y: -21.53, z: -12.288005}
+  m_LocalPosition: {x: -1.99, y: -0.36, z: -12.288005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 213327163}
@@ -709,12 +709,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &114491681 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5356009887625308626, guid: 9b8379a04267a9a468780d9d44761401,
-    type: 3}
-  m_PrefabInstance: {fileID: 966776630}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &197342374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: StoneScene
   gateAnimatorObm: {fileID: 392968908}
+  animatorSceneObm: {fileID: 0}
 --- !u!95 &392968908
 Animator:
   serializedVersion: 3
@@ -1303,6 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: GrassScene
   gateAnimatorObm: {fileID: 714098364}
+  animatorSceneObm: {fileID: 0}
 --- !u!95 &714098364
 Animator:
   serializedVersion: 3
@@ -1447,6 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: GrassScene
   gateAnimatorObm: {fileID: 791676693}
+  animatorSceneObm: {fileID: 0}
 --- !u!95 &791676693
 Animator:
   serializedVersion: 3
@@ -49153,6 +49150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: SnowScene
   gateAnimatorObm: {fileID: 1045631447}
+  animatorSceneObm: {fileID: 0}
 --- !u!95 &1045631447
 Animator:
   serializedVersion: 3
@@ -50045,7 +50043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: SnowScene
   gateAnimatorObm: {fileID: 1288238240}
-  animatorSceneObm: {fileID: 114491681}
+  animatorSceneObm: {fileID: 0}
 --- !u!61 &1288238244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58554,7 +58552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597517681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.35, y: -21.53, z: -12.288005}
+  m_LocalPosition: {x: -1.99, y: -0.36, z: -12.288005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 929960180}
@@ -58938,6 +58936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: SnowScene
   gateAnimatorObm: {fileID: 1932494656}
+  animatorSceneObm: {fileID: 2032298348}
 --- !u!95 &1932494656
 Animator:
   serializedVersion: 3
@@ -59022,6 +59021,131 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2032298347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5356009887451686570, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_Name
+      value: Scene Changer Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356009887451686574, guid: 9b8379a04267a9a468780d9d44761401,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b8379a04267a9a468780d9d44761401, type: 3}
+--- !u!95 &2032298348 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5356009887625308626, guid: 9b8379a04267a9a468780d9d44761401,
+    type: 3}
+  m_PrefabInstance: {fileID: 2032298347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806440630912143647
 PrefabInstance:
   m_ObjectHideFlags: 0
