@@ -50043,7 +50043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameObm: SnowScene
   gateAnimatorObm: {fileID: 1288238240}
-  animatorSceneObm: {fileID: 0}
+  animatorSceneObm: {fileID: 2032298348}
 --- !u!61 &1288238244
 BoxCollider2D:
   m_ObjectHideFlags: 0
