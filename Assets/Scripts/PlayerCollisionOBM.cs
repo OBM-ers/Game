@@ -11,6 +11,7 @@ public class PlayerCollisionOBM : MonoBehaviour
     public Rigidbody2D playerObm;
     public GameObject playerObjectObm;
     public Transform spawnObm;
+    public AudioSource collectSoundObm;
     public Animator animatorSceneObm;
     public float requiredSoulsObm;
     private bool soulCollectedObm = false;
@@ -68,6 +69,7 @@ public class PlayerCollisionOBM : MonoBehaviour
         {
             Destroy(collectibleObm.gameObject);
             soulCollectedObm = true;
+            collectSoundObm.Play();
         }
     }
 }
