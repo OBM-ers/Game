@@ -31,35 +31,57 @@ public class ControllerDriverObm : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        try
+        if(controllerEnabledObm == false)
         {
-            if (ControllerDataObm.ReadLine() == "1")
+            try
             {
-                // Debug.Log(controllerInputObm);
-                controllerInputObm = "1";
+                ControllerDataObm = new SerialPort("COM4", 115200);
+                ControllerDataObm.ReadTimeout = 10;
+                ControllerDataObm.Open();
+                if (ControllerDataObm.IsOpen)
+                {
+                    controllerEnabledObm = true;
+                }
             }
+            catch { }
+        }
+        else {
+            try
+            {
+                if (ControllerDataObm.ReadLine() == "1")
+                {
+                    // Debug.Log(controllerInputObm);
+                    controllerInputObm = "1";
+                }
 
-            else if (ControllerDataObm.ReadLine() == "-1")
-            {
-                //Debug.Log(controllerInputObm);
-                controllerInputObm = "-1";
+                else if (ControllerDataObm.ReadLine() == "-1")
+                {
+                    //Debug.Log(controllerInputObm);
+                    controllerInputObm = "-1";
+                }
+                else if (ControllerDataObm.ReadLine() == "2")
+                {
+                    //Debug.Log(controllerInputObm);
+                    controllerInputObm = "2";
+                }
+                else if (ControllerDataObm.ReadLine() == "5")
+                {
+                    controllerInputObm = "5";
+                    Debug.Log(controllerInputObm);
+                }
+                else if (ControllerDataObm.ReadLine() == "6")
+                {
+                    controllerInputObm = "6";
+                    // Debug.Log(controllerInputObm);
+                }
+                else if (ControllerDataObm.ReadLine() == "0")
+                {
+                    controllerInputObm = "0";
+                    //Debug.Log(controllerInputObm);
+                }
             }
-            else if (ControllerDataObm.ReadLine() == "5")
-            {
-                controllerInputObm = "5";
-                Debug.Log(controllerInputObm);
-            }
-            else if (ControllerDataObm.ReadLine() == "6")
-            {
-                controllerInputObm = "6";
-                // Debug.Log(controllerInputObm);
-            }
-            else if (ControllerDataObm.ReadLine() == "0")
-            {
-                controllerInputObm = "0";
-                //Debug.Log(controllerInputObm);
-            }
+            catch { }
         }
-        catch { }
-        }
+    }
+        
 }

@@ -10,20 +10,43 @@ public class GateScript : MonoBehaviour
     private bool visitSceneObm = false;
     public Animator gateAnimatorObm;
     public Animator animatorSceneObm;
+    private GameObject playerObm;
 
+    void Start()
+    {
+        playerObm = GameObject.FindWithTag("Player");
+    }
     void Update()
     {
-        // If player presses the 
-        if (Input.GetKeyDown(KeyCode.W) && visitSceneObm)
+        ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
+        // If player presses the w key he will enter the gate
+        if(controllerScriptObm.controllerEnabledObm == true)
         {
-            animatorSceneObm.SetTrigger("FadeOut");
-            Debug.Log(this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"));
+            if (controllerScriptObm.controllerInputObm == "2" && visitSceneObm)
+            {
+                animatorSceneObm.SetTrigger("FadeOut");
+                Debug.Log(this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"));
+            }
+            if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
+            {
+                Debug.Log("Going to: " + sceneTargetObm);
+                SceneManager.LoadScene(sceneTargetObm);
+            }
         }
-        if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
-        {
-            Debug.Log("Going to: " + sceneTargetObm);
-            SceneManager.LoadScene(sceneTargetObm);
+        else
+        {    
+            if (Input.GetKeyDown(KeyCode.W) && visitSceneObm)
+            {
+                animatorSceneObm.SetTrigger("FadeOut");
+                Debug.Log(this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"));
+            }
+            if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
+            {
+                Debug.Log("Going to: " + sceneTargetObm);
+                SceneManager.LoadScene(sceneTargetObm);
+            }
         }
+       
     }
 
     // Selects level on collision

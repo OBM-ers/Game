@@ -12,7 +12,6 @@ int di_JumpButtonPinObm = 8;
 int di_MoveRightPinObm = 7;
 int di_MoveLeftPinObm = 6;
 int di_MoveUpPinObm = 5;
-int di_MoveDownPimObm = 4;
 
 //move buttons
 int buttonRightState;
@@ -34,7 +33,7 @@ void setup() {
   pinMode(di_MoveRightPinObm, INPUT_PULLUP);
   pinMode(di_MoveLeftPinObm, INPUT_PULLUP);
   pinMode(di_MoveUpPinObm, INPUT_PULLUP);
-  pinMode(di_MoveDownPimObm, INPUT_PULLUP);
+
 }
 
 
@@ -46,6 +45,7 @@ void loop() {
   buttonLeftState = digitalRead(di_MoveLeftPinObm);
   buttonJumpState = digitalRead(di_JumpButtonPinObm);
   buttonAttackState = digitalRead(di_AttackButtonPinObm);
+  buttonUpState = digitalRead(di_MoveUpPinObm);
   //Checks if the switch is pressed
   if (buttonRightState == LOW) {
     //Sends a character that unity understands
@@ -59,6 +59,13 @@ void loop() {
 
   if ( buttonLeftState == LOW) {
     Serial.println(-1);
+    Serial.flush();
+    delay(joyStickDelayObm);
+  }
+
+  
+  if ( buttonUpState == LOW) {
+    Serial.println(2);
     Serial.flush();
     delay(joyStickDelayObm);
   }
@@ -77,7 +84,7 @@ void loop() {
     delay(shortDelayObm);
     // delayObm = shortDelayObm;
   }
-  if (buttonLeftState == HIGH && buttonRightState == HIGH && buttonJumpState == LOW && buttonAttackState == LOW) {
+  if (buttonLeftState == HIGH && buttonRightState == HIGH && buttonJumpState == LOW && buttonAttackState == LOW && buttonUpState == LOW) {
     Serial.println(0);
     Serial.flush();
     delay(shortDelayObm);
