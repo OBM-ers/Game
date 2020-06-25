@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8009482571710261335}
   - component: {fileID: 8009482571710261332}
   - component: {fileID: 8009482571710261333}
+  - component: {fileID: -3073565992081698687}
   - component: {fileID: 8009482571710261338}
   m_Layer: 11
   m_Name: Player
@@ -160,10 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6411c84e7016541b6d2888461961a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreenObm: {fileID: 0}
   maxValuesOBM: 100
-  currentHealthOBM: 100
-  currentEnergyOBM: 100
-  timerOBM: 0
   healthBarSliderOBM: {fileID: 0}
   energyBarSliderOBM: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -191,6 +190,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   controllerEnabledObm: 0
+--- !u!114 &-3073565992081698687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009482571710261339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3eb27516dda5f42acbec0fb75e722c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulAmountObm: {fileID: 0}
+  soulsNeededTextObm: {fileID: 0}
+  playerObm: {fileID: 8009482571710261334}
+  playerObjectObm: {fileID: 0}
+  spawnObm: {fileID: 0}
+  animatorSceneObm: {fileID: 0}
+  requiredSoulsObm: 0
 --- !u!82 &8009482571710261338
 AudioSource:
   m_ObjectHideFlags: 0
