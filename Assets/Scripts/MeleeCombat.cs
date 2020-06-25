@@ -57,7 +57,7 @@ public class MeleeCombat : MonoBehaviour
     {
         ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
 
-        if (controllerScriptObm.controllerInputObm == "6")
+        if (controllerScriptObm.attackInputObm == true)
         {
             if (timerOBM <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
             {
@@ -71,6 +71,7 @@ public class MeleeCombat : MonoBehaviour
                 AttackAnimOBM();
                 timerOBM = timeBetweenAttackOBM;
                 FindObjectOfType<PlayerHudOBM>().UseEnergyOBM(20);
+                controllerScriptObm.attackInputObm = false;
             }
             timerOBM -= Time.deltaTime;
         }        

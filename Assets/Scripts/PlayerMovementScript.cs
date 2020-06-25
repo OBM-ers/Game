@@ -95,11 +95,11 @@ public class PlayerMovementScript : MonoBehaviour
             isGroundedObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, whatIsGroundObm);
             if (playerRigidbodyObm.velocity.y < 0)
             {
-                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
+               playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
             }
-            else if (playerRigidbodyObm.velocity.y > 0 && controllerScriptObm.controllerInputObm != "5")
+            else if (playerRigidbodyObm.velocity.y > 0 && controllerScriptObm.jumpInputObm == false)
             {
-                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
+               playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
             }
         }
         else {
@@ -143,12 +143,13 @@ public class PlayerMovementScript : MonoBehaviour
         ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
         if (controllerScriptObm.controllerEnabledObm == true)
         {                  
-            if (isGroundedObm == true && controllerScriptObm.controllerInputObm == "5")
+            if (isGroundedObm == true && controllerScriptObm.jumpInputObm == true)
             {
                 isGroundedObm = false;
                 playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
                 Debug.Log(jumpSpeedObm);
                 jumpSoundObm.Play();
+                controllerScriptObm.jumpInputObm = false;
             }
             else if(isGroundedObm == false)
             {

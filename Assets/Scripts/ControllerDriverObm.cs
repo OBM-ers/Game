@@ -9,8 +9,9 @@ public class ControllerDriverObm : MonoBehaviour
     SerialPort ControllerDataObm;
     //Controller variables
     public bool controllerEnabledObm = false;
-    public string controllerInputObm;
-    public string attackInput;
+    public string controllerInputObm;    
+    public bool jumpInputObm;
+    public bool attackInputObm;
     void Awake()
     {
         //string comPortObm = "COM3";
@@ -29,7 +30,7 @@ public class ControllerDriverObm : MonoBehaviour
  
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(controllerEnabledObm == false)
         {
@@ -50,6 +51,7 @@ public class ControllerDriverObm : MonoBehaviour
             {
                 if (ControllerDataObm.ReadLine() == "1")
                 {
+
                     // Debug.Log(controllerInputObm);
                     controllerInputObm = "1";
                 }
@@ -66,12 +68,14 @@ public class ControllerDriverObm : MonoBehaviour
                 }
                 else if (ControllerDataObm.ReadLine() == "5")
                 {
-                    controllerInputObm = "5";
+
+                    jumpInputObm = true;
                     Debug.Log(controllerInputObm);
                 }
                 else if (ControllerDataObm.ReadLine() == "6")
                 {
-                    controllerInputObm = "6";
+                    attackInputObm = true;
+                   // controllerInputObm = "6";
                     // Debug.Log(controllerInputObm);
                 }
                 else if (ControllerDataObm.ReadLine() == "0")

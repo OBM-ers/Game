@@ -1,11 +1,10 @@
 int buttonState;
 int lastButtonState = LOW;
-unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = 5;
 int shortDelayObm = 10;
 int longDelayObm = 250;
 int delayObm = 250;
 int joyStickDelayObm = 10;
+
 //pin variables
 int di_AttackButtonPinObm = 9;
 int di_JumpButtonPinObm = 8;
@@ -27,7 +26,7 @@ bool allowAttack = true;
 void setup() {
   Serial.begin(115200);
 
-  // startMillis = millis();  //initial start time
+
   pinMode(di_AttackButtonPinObm, INPUT_PULLUP);
   pinMode(di_JumpButtonPinObm, INPUT_PULLUP);
   pinMode(di_MoveRightPinObm, INPUT_PULLUP);
@@ -58,34 +57,35 @@ void loop() {
   //this proces repeats for all the other switches
 
   if ( buttonLeftState == LOW) {
-    Serial.println(-1);
+    Serial.println("-1");
     Serial.flush();
     delay(joyStickDelayObm);
   }
 
-  
+
   if ( buttonUpState == LOW) {
-    Serial.println(2);
+    Serial.println("2");
     Serial.flush();
     delay(joyStickDelayObm);
   }
 
 
   if ( buttonAttackState == HIGH) {
-    Serial.println(6);
+    Serial.println("6");
     Serial.flush();
     delay(shortDelayObm);
     // delayObm = shortDelayObm;
   }
 
-    if (buttonJumpState == HIGH) {
-    Serial.println(5);
+  if (buttonJumpState == HIGH && allowJumpObm == true) {
+    Serial.println("5");
     Serial.flush();
     delay(shortDelayObm);
-    // delayObm = shortDelayObm;
   }
+
+  
   if (buttonLeftState == HIGH && buttonRightState == HIGH && buttonJumpState == LOW && buttonAttackState == LOW && buttonUpState == LOW) {
-    Serial.println(0);
+    Serial.println("0");
     Serial.flush();
     delay(shortDelayObm);
   }
