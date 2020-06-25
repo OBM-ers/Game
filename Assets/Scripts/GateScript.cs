@@ -8,8 +8,13 @@ public class GateScript : MonoBehaviour
     public string sceneNameObm;
     private bool visitSceneObm = false;
     public Animator gateAnimatorObm;
-    public Animator animatorSceneObm;
+    public Animator animatorSceneObm;
+    private GameObject playerObm;
 
+    void Start()
+    {
+        playerObm = GameObject.FindWithTag("Player");
+    }
     void Update()
     {
         
