@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    SerialPort ControllerDataObm;
+    
     private Rigidbody2D playerRigidbodyObm;
     public Animator animatorObm;
     // Input variables
@@ -28,25 +28,20 @@ public class PlayerMovementScript : MonoBehaviour
     public LayerMask whatIsGroundObm;
     // Flip character variable
     private bool facingrightObm = true;
-    //Controller variables
-    public bool controllerEnabledObm = false;
+    //Controller variables   
+    private GameObject playerObm;
+
+
+
+    void Start()
+    {
+        playerObm = GameObject.FindWithTag("Player");
+      
+    }
 
     void Awake()
     {
-        //string comPortObm = "COM3";
-        try { 
-            ControllerDataObm = new SerialPort("COM3", 9600);
-            ControllerDataObm.ReadTimeout = 10;//10 is the sweetspot
-            ControllerDataObm.Open();
-            if (ControllerDataObm.IsOpen)
-            {
-                controllerEnabledObm = true;
-            }     
-        }
-        catch { }
-
-        playerRigidbodyObm = GetComponent<Rigidbody2D>();
-     
+        playerRigidbodyObm = GetComponent<Rigidbody2D>();     
     }
 
     void Update()
@@ -59,41 +54,69 @@ public class PlayerMovementScript : MonoBehaviour
     void FixedUpdate()
     {
         MoveObm();
+        
+            
     }
 
     private void MoveObm()
     {
 
-        // MOVE
-        if (controllerEnabledObm)
+        ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
+        
+        // MOVE        
+       
+        if (controllerScriptObm.controllerEnabledObm==false)
         {
-            if (ControllerDataObm.ReadLine() == "1" || ControllerDataObm.ReadLine() == "-1")
-            {
-                xInputObm = GetFLoatObm(ControllerDataObm.ReadLine(), 0.0f) * runSpeedObm * Time.fixedDeltaTime;
-                Debug.Log("Input: " + xInputObm);
-            }
-
-            Debug.Log("Nothing");
+            xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
         }
         else
         {
-            xInputObm = Input.GetAxisRaw("Horizontal") * runSpeedObm * Time.fixedDeltaTime;
-            //Debug.Log(xInputObm);
+            
+            if (controllerScriptObm.controllerInputObm == "1" || controllerScriptObm.controllerInputObm == "-1")
+            {
+                //xInputObm = GetFLoatObm(controllerScriptObm.controllerInputObm, 0.0f) * runSpeedObm * Time.fixedDeltaTime;
+                int TestObm = Convert.ToInt32(controllerScriptObm.controllerInputObm);
+                float Test2Obm = (float)TestObm;
+                Debug.Log(Test2Obm);
+                xInputObm = Test2Obm * runSpeedObm * Time.fixedDeltaTime;
+            }
+            else
+            {
+                xInputObm = 0f;
+            }
         }
-
+                 
         Vector3 targetVelocityObm = new Vector2(xInputObm * 10f, playerRigidbodyObm.velocity.y);
         playerRigidbodyObm.velocity = Vector3.SmoothDamp(playerRigidbodyObm.velocity, targetVelocityObm, ref VelocityObm, movementSmoothingObm);
         
-        // JUMP
-        isGroundedObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, whatIsGroundObm);
-        if (playerRigidbodyObm.velocity.y < 0)
+       if(controllerScriptObm.controllerEnabledObm == true)
         {
-            playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
+            isGroundedObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, whatIsGroundObm);
+            if (playerRigidbodyObm.velocity.y < 0)
+            {
+                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
+            }
+            else if (playerRigidbodyObm.velocity.y > 0 && controllerScriptObm.controllerInputObm != "5")
+            {
+                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
+            }
         }
-        else if (playerRigidbodyObm.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
+        else {
+            isGroundedObm = Physics2D.OverlapCircle(groundCheckObm.position, checkRadiusObm, whatIsGroundObm);
+            if (playerRigidbodyObm.velocity.y < 0)
+            {
+                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplierObm - 1) * Time.fixedDeltaTime;
+            }
+            else if (playerRigidbodyObm.velocity.y > 0 && !Input.GetButton("Jump"))
+            {
+                playerRigidbodyObm.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplierObm - 1) * Time.fixedDeltaTime;
+            }
         }
+            // JUMP CALCULATION
+            
+        
+        
+        
         // FLIP
         if (xInputObm < 0f && facingrightObm == true)
         {
@@ -107,24 +130,27 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     private float GetFLoatObm(string stringValueObm, float defaultValueObm)
-    {
+    {        
         float resultObm = defaultValueObm;
         float.TryParse(stringValueObm, out resultObm);
-
+        Debug.Log(resultObm);
         return resultObm;
     }
 
     private void JumpObm()
     {
-        if (controllerEnabledObm)
-        {
-            if (isGroundedObm == true && ControllerDataObm.ReadLine() == "5")
+        ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
+        if (controllerScriptObm.controllerEnabledObm == true)
+        {                  
+            if (isGroundedObm == true && controllerScriptObm.controllerInputObm == "5")
             {
-                
-                //Controller Jump
                 isGroundedObm = false;
                 playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
                 Debug.Log(jumpSpeedObm);
+            }
+            else if(isGroundedObm == false)
+            {
+                playerRigidbodyObm.AddForce(new Vector2(0f, 0));
             }
         }
         else
