@@ -20,6 +20,7 @@ public class GateScript : MonoBehaviour
 
         if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
         {
+            Debug.Log("Going to: " + sceneNameObm);
             SceneManager.LoadScene(sceneNameObm);
         }
     }
