@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorObm: {fileID: 40943330}
+  jumpSoundObm: {fileID: 0}
   runSpeedObm: 40
   jumpSpeedObm: 400
   movementSmoothingObm: 0.05
@@ -355,6 +356,7 @@ MonoBehaviour:
   healthBarSliderOBM: {fileID: 0}
   energyBarSliderOBM: {fileID: 0}
   spawnPoint: {fileID: 0}
+  deathSoundObm: {fileID: 0}
 --- !u!70 &40943328
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -470,7 +472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40943324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.99, y: -0.36, z: -2.2880049}
+  m_LocalPosition: {x: -1.538, y: -1.296, z: -2.2880049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 38566996}
@@ -636,7 +638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43192683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.99, y: -0.36, z: -12.288005}
+  m_LocalPosition: {x: -1.538, y: -1.296, z: -12.288005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 213327163}
@@ -50246,7 +50248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438869437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 1.28, z: 0}
+  m_LocalPosition: {x: 2.21, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58552,7 +58554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597517681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.99, y: -0.36, z: -12.288005}
+  m_LocalPosition: {x: -1.538, y: -1.296, z: -12.288005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 929960180}
