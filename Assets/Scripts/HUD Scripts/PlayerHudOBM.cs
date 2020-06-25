@@ -17,6 +17,7 @@ public class PlayerHudOBM : MonoBehaviour
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
     public Transform spawnPoint;
+    public AudioSource deathSoundObm;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,13 @@ public class PlayerHudOBM : MonoBehaviour
             }
         }
 
+        if(currentHealthOBM <= 0)
+        {
+            gameObject.transform.position = spawnPoint.position;
+            currentHealthOBM = maxValuesOBM;
+            deathSoundObm.Play();
+        }
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if(currentEnergyOBM > 0)
@@ -70,8 +78,7 @@ public class PlayerHudOBM : MonoBehaviour
         {
             Debug.Log("dead");
             gameOverScreenObm.SetActive(true);
-            Time.timeScale = 0f;
-            //GameObject.Find("GameOverCanvas").SetActive(true);
+            Time.timeScale = 0.0001f;
         }
     }
 

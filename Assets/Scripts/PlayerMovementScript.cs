@@ -12,6 +12,7 @@ public class PlayerMovementScript : MonoBehaviour
     
     private Rigidbody2D playerRigidbodyObm;
     public Animator animatorObm;
+    public AudioSource jumpSoundObm;
     // Input variables
     private float xInputObm = 0f;
     // Speed variables
@@ -147,6 +148,7 @@ public class PlayerMovementScript : MonoBehaviour
                 isGroundedObm = false;
                 playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
                 Debug.Log(jumpSpeedObm);
+                jumpSoundObm.Play();
             }
             else if(isGroundedObm == false)
             {
@@ -159,9 +161,9 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 isGroundedObm = false;
                 playerRigidbodyObm.AddForce(new Vector2(0f, jumpSpeedObm));
+                jumpSoundObm.Play();
             }
         }
-
     }
 
     private void flipObm()
