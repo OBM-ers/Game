@@ -47,7 +47,7 @@ public class PlayerMovementScript : MonoBehaviour
         catch { }
 
         playerRigidbodyObm = GetComponent<Rigidbody2D>();
-     
+        Time.timeScale = 1f;
     }
 
     void Update()

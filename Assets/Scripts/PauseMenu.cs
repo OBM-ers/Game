@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseObm()
     {
         pauseMenuUiObm.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0001f;
         gameIsPausedObm = true;
     }
 }
