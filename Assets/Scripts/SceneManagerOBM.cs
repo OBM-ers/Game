@@ -7,12 +7,11 @@ public class SceneManagerOBM : MonoBehaviour
 {
     public void ExitToMenuObm()
     {
-        SceneManager.LoadScene("MenuScene");
+         SceneManager.LoadScene("MenuScene");
     }
 
     public void ReloadSceneObm()
     {
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
