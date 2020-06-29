@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class WeaponPickUpOBM : MonoBehaviour
+public class WeaponPickUp : MonoBehaviour
 {
+    //variables
     public GameObject swordObm;
     public GameObject scytheObm;
 
@@ -18,6 +19,7 @@ public class WeaponPickUpOBM : MonoBehaviour
 
     void Update()
     {
+        //checks if the cooldown of the weaponpickup so you can't spam the weaponpickup function
         if (cooldownWeaponObm == true)
         {
             if(timerObm <= 0)
@@ -31,6 +33,7 @@ public class WeaponPickUpOBM : MonoBehaviour
         }
     }
 
+    //Picks up weapon when the colliding with 
     private void OnTriggerEnter2D(Collider2D playerObm)
     {
         if (playerObm.tag == "Player")

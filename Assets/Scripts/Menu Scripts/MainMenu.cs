@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class gobMainMenuOBM : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public void GameHubOBM()
+    //Load hubscene
+    public void GameHubObm()
     {
         SceneManager.LoadScene("HubScene");
     }
 
-    public void QuitGameOBM()
+    //Quit game
+    public void QuitGameObm()
     {
         Debug.Log("Quit");
         Application.Quit();

@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    //variables
     public static bool gameIsPausedObm = false;
-
     public GameObject pauseMenuUiObm;
     public GameObject optionMenuUiObm;
     
     void Update()
     {
+        //checks if the escape button is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //checks if game is paused
             if (gameIsPausedObm)
             {
+                //Resumes game and if option menu is open, it will close
                 if (!optionMenuUiObm.activeSelf)
                 {
                     ResumeObm();
@@ -32,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Resume game
     public void ResumeObm()
     {
         pauseMenuUiObm.SetActive(false);
@@ -39,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPausedObm = false;
     }
 
+    //Pause game
     public void PauseObm()
     {
         pauseMenuUiObm.SetActive(true);

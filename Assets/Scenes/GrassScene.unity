@@ -12591,7 +12591,7 @@ PrefabInstance:
     - target: {fileID: 2358808143726613053, guid: 22b0709f6e6b9e642a1305666cfeca7b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2358808143726613053, guid: 22b0709f6e6b9e642a1305666cfeca7b,
         type: 3}
@@ -15647,6 +15647,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93be6b6b95fc7b4bb93215b7b85c154, type: 3}
+--- !u!95 &1238090470 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7475975546570212833, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486618757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1350403949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15843,6 +15849,21 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1800457179}
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: healthBarSliderObm
+      value: 
+      objectReference: {fileID: 2006686304}
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: energyBarSliderObm
+      value: 
+      objectReference: {fileID: 251576454}
+    - target: {fileID: 7475975544991090254, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: spawnPointObm
+      value: 
+      objectReference: {fileID: 1800457179}
     - target: {fileID: 7475975544991090255, guid: 7393575acfa7bf64caf3a182efbfdb2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15903,6 +15924,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7475975545712554481, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: animatorObm
+      value: 
+      objectReference: {fileID: 2118143231}
+    - target: {fileID: 7475975546570212834, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+        type: 3}
+      propertyPath: animatorObm
+      value: 
+      objectReference: {fileID: 1238090470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7393575acfa7bf64caf3a182efbfdb2c, type: 3}
 --- !u!114 &1491489121 stripped
@@ -15962,7 +15993,7 @@ PrefabInstance:
     - target: {fileID: 2465756697468128368, guid: d93be6b6b95fc7b4bb93215b7b85c154,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2465756697468128368, guid: d93be6b6b95fc7b4bb93215b7b85c154,
         type: 3}
@@ -16530,7 +16561,7 @@ PrefabInstance:
     - target: {fileID: 2358808143726613053, guid: 22b0709f6e6b9e642a1305666cfeca7b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2358808143726613053, guid: 22b0709f6e6b9e642a1305666cfeca7b,
         type: 3}
@@ -17019,3 +17050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902c51c24672af14aa9eff351f9775cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2118143231 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7475975545712554480, guid: 7393575acfa7bf64caf3a182efbfdb2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486618757}
+  m_PrefabAsset: {fileID: 0}

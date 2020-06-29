@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreenObm: {fileID: 0}
-  maxValuesOBM: 100
-  healthBarSliderOBM: {fileID: 0}
-  energyBarSliderOBM: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  maxValuesObm: 100
+  healthBarSliderObm: {fileID: 0}
+  energyBarSliderObm: {fileID: 0}
+  spawnPointObm: {fileID: 0}
   deathSoundObm: {fileID: -6761694798950476494}
 --- !u!114 &7475975544991090250
 MonoBehaviour:
@@ -617,7 +617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerEnabledObm: 0
   controllerInputObm: 
-  attackInput: 
+  jumpInputObm: 0
+  attackInputObm: 0
 --- !u!1 &7475975545712554486
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,8 +733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdc57685b125a4280d07956eb7d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorOBM: {fileID: 7475975545712554480}
-  timeBetweenAttackOBM: 0.5
+  animatorObm: {fileID: 0}
+  timeBetweenAttackObm: 1
   attackPosObm: {fileID: 7475975546062311818}
   whatIsEnemiesObm:
     serializedVersion: 2
@@ -915,8 +916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdc57685b125a4280d07956eb7d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorOBM: {fileID: 7475975546570212833}
-  timeBetweenAttackOBM: 1
+  animatorObm: {fileID: 0}
+  timeBetweenAttackObm: 2
   attackPosObm: {fileID: 7475975546062311818}
   whatIsEnemiesObm:
     serializedVersion: 2

@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class MeleeCombat : MonoBehaviour
 {
-    public Animator animatorOBM;
+    //Variables
+    public Animator animatorObm;
     private GameObject getEnergyValueObm;
-    private float timerOBM;
-    public float timeBetweenAttackOBM;
+    private float timerObm;
+    public float timeBetweenAttackObm;
 
     public Transform attackPosObm;
     public LayerMask whatIsEnemiesObm;
@@ -21,45 +22,50 @@ public class MeleeCombat : MonoBehaviour
     {
         playerObm = GameObject.FindWithTag("Player");
     }
+
     // Update is called once per frame
     void Update()
     {
-        ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
+        ControllerDriver controllerScriptObm = playerObm.GetComponent<ControllerDriver>();
         if (controllerScriptObm.controllerEnabledObm == true)
         {
             controllerAttackObm();
         }
         else
         {
-            //Check if cooldown timer is 0 and if the energy bar isn't empty
-            if (timerOBM <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
+            //Check if cooldown timer is 0 and if the energy bar isn't empty also if the pausemenu is false
+            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
             {
+                //Fire1 is the input to attack (Leftmouse button)
                 if (Input.GetButtonDown("Fire1"))
                 {
+                    //Checks how many enemies were hit
                     Collider2D[] enemiesToDamageObm = Physics2D.OverlapCircleAll(attackPosObm.position, attackRangeObm, whatIsEnemiesObm);
                     for (int i = 0; i < enemiesToDamageObm.Length; i++)
                     {
+                        //Enemy takes damage
                         enemiesToDamageObm[i].GetComponent<EnemyController>().TakeDamageObm(damageObm);
                         Debug.Log("HIT");
                     
                     }
-                    AttackAnimOBM();
-                    timerOBM = timeBetweenAttackOBM;
-                    FindObjectOfType<PlayerHudOBM>().UseEnergyOBM(20);
+                    AttackAnimObm();
+                    timerObm = timeBetweenAttackObm;
+                    FindObjectOfType<PlayerHud>().UseEnergyObm(20);
                 }
             }
-            timerOBM -= Time.deltaTime;
+            timerObm -= Time.deltaTime;
         }
         
     }
 
+    //Same as the function before but checks for controller input
     public void controllerAttackObm()
     {
-        ControllerDriverObm controllerScriptObm = playerObm.GetComponent<ControllerDriverObm>();
+        ControllerDriver controllerScriptObm = playerObm.GetComponent<ControllerDriver>();
 
         if (controllerScriptObm.attackInputObm == true)
         {
-            if (timerOBM <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
+            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
             {
                 Collider2D[] enemiesToDamageObm = Physics2D.OverlapCircleAll(attackPosObm.position, attackRangeObm, whatIsEnemiesObm);
                 for (int i = 0; i < enemiesToDamageObm.Length; i++)
@@ -68,22 +74,24 @@ public class MeleeCombat : MonoBehaviour
                     Debug.Log("HIT");
 
                 }
-                AttackAnimOBM();
-                timerOBM = timeBetweenAttackOBM;
-                FindObjectOfType<PlayerHudOBM>().UseEnergyOBM(20);
+                AttackAnimObm();
+                timerObm = timeBetweenAttackObm;
+                FindObjectOfType<PlayerHud>().UseEnergyObm(20);
                 controllerScriptObm.attackInputObm = false;
             }
-            timerOBM -= Time.deltaTime;
+            timerObm -= Time.deltaTime;
         }        
     }
     private void OnDrawGizmosSelected()
     {
+        //gizmos is to see the range of the weapon. Good for debugging
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosObm.position, attackRangeObm);
     }
 
-    private void AttackAnimOBM()
+    private void AttackAnimObm()
     {
-        animatorOBM.SetTrigger("attack");
+        //attack animation
+        animatorObm.SetTrigger("attack");
     }
 }

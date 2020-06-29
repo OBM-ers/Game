@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFire : MonoBehaviour
 {
+    //variables
     public Transform firePointObm;
     public GameObject bulletPrefabObm;
     public float timeToShootObm;
@@ -26,6 +27,7 @@ public class EnemyFire : MonoBehaviour
     void Update()
     {
         currentTimeObm -= Time.deltaTime;
+        //If currentTimeObm is tinier or equal to timeToShootObm then the enemy fires.
         if (currentTimeObm <= timeToShootObm)
         {
             ShootObm();
@@ -36,6 +38,7 @@ public class EnemyFire : MonoBehaviour
 
     public void ShootObm()
     {
+        //shoots a bullet
         Instantiate(bulletPrefabObm, firePointObm.position, firePointObm.rotation);
     }
 }

@@ -4,15 +4,15 @@ using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class FollowMouseOBM : MonoBehaviour
+public class FollowMouse : MonoBehaviour
 {
     private bool facingrightObm = true;
 
+    //the grandpa flips depending on which button is hovered over
     public void OnMouseOverExitObm()
     {
         if(facingrightObm == false)
         {
-            //facingrightObm = !facingrightObm;
             Vector2 localScale = gameObject.transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
@@ -24,7 +24,6 @@ public class FollowMouseOBM : MonoBehaviour
     {
         if (facingrightObm == true)
         {
-            //facingrightObm = !facingrightObm;
             Vector2 localScale = gameObject.transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
