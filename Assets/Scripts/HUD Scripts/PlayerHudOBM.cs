@@ -16,7 +16,7 @@ public class PlayerHudOBM : MonoBehaviour
 
     public HealthBarSliderOBM healthBarSliderOBM;
     public EnergyBarSliderOBM energyBarSliderOBM;
-    public Transform spawnPoint;
+    public Transform spawnPointObm;
     public AudioSource deathSoundObm;
 
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class PlayerHudOBM : MonoBehaviour
 
         if(currentHealthOBM <= 0)
         {
-            gameObject.transform.position = spawnPoint.position;
+            gameObject.transform.position = spawnPointObm.position;
             currentHealthOBM = maxValuesOBM;
             deathSoundObm.Play();
         }

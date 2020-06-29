@@ -9,13 +9,14 @@ public class EnemyFire : MonoBehaviour
     public float timeToShootObm;
     public float delayToShootObm;
     private float currentTimeObm;
-    public bool shootRight = false;
+    public bool shootRightObm = false;
+
     // Start is called before the first frame update
     void Start()
     {
         currentTimeObm = delayToShootObm;
 
-        if (shootRight)
+        if (shootRightObm)
         {
             bulletPrefabObm.transform.Rotate(0f, 180f, 0f);
         }

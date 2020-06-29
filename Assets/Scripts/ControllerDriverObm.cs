@@ -5,13 +5,13 @@ using System.IO.Ports;
 
 public class ControllerDriverObm : MonoBehaviour
 {
-    
     SerialPort ControllerDataObm;
     //Controller variables
     public bool controllerEnabledObm = false;
     public string controllerInputObm;    
     public bool jumpInputObm;
     public bool attackInputObm;
+
     void Awake()
     {
         //string comPortObm = "COM3";
@@ -27,7 +27,6 @@ public class ControllerDriverObm : MonoBehaviour
         }
         catch { }
     }
- 
 
     // Update is called once per frame
     void Update()
@@ -87,5 +86,4 @@ public class ControllerDriverObm : MonoBehaviour
             catch { }
         }
     }
-        
 }

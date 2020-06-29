@@ -8,11 +8,11 @@ public class EnemyBullet : MonoBehaviour
     public int bulletDamageObm;
     public Rigidbody2D rigidbodyBulletObm;
     private bool fireRightObm;
-    public GameObject shootingEnemy;
+    public GameObject shootingEnemyObm;
 
     void Start()
     {
-        fireRightObm = shootingEnemy.GetComponent<EnemyFire>().shootRight;
+        fireRightObm = shootingEnemyObm.GetComponent<EnemyFire>().shootRightObm;
         if (fireRightObm)
         {
             rigidbodyBulletObm.velocity = transform.right * bulletSpeedObm;

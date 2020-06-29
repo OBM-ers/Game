@@ -17,7 +17,7 @@ public class PlayerCollisionOBM : MonoBehaviour
     private bool soulCollectedObm = false;
     private int soulAmountIntegerObm = 0;
     private bool fallThroughMapObm = false;
-    private int damage = 20;
+    private int damageObm = 20;
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class PlayerCollisionOBM : MonoBehaviour
     {
         if (fallThroughMapObm == true)
         {
-            playerObjectObm.GetComponent<PlayerHudOBM>().TakeDamageOBM(damage);
+            playerObjectObm.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
             fallThroughMapObm = false;
         }
     }
