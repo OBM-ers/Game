@@ -178,7 +178,7 @@ MonoBehaviour:
   wallCheckObm:
     serializedVersion: 2
     m_Bits: 9216
-  animatorOBM: {fileID: 8762449171591108342}
+  animatorObm: {fileID: 8762449171591108342}
   hitSoundObm: {fileID: -3023621687756963931}
 --- !u!82 &-3023621687756963931
 AudioSource:

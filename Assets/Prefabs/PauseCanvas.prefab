@@ -1564,13 +1564,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetMusicVolumeOBM
-        m_Mode: 0
+        m_MethodName: SetMusicVolumeObm
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1659,7 +1659,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetGameFullscreenOBM
+        m_MethodName: SetGameFullscreenObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1834,7 +1834,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetSFXVolumeOBM
+        m_MethodName: SetSFXVolumeObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2086,13 +2086,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetMasterVolumeOBM
+        m_MethodName: SetMasterVolumeObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 100
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2942,14 +2942,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b02ee85abc0ad4db70057a451a2b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixerOBM: {fileID: 24100000, guid: 0af85b58737bd7344b2b7dc097985e5b, type: 2}
-  masterVolumeSliderOBM: {fileID: 5916267781943337027}
-  sfxVolumeSliderOBM: {fileID: 5916267781769120942}
-  musicVolumeSliderOBM: {fileID: 5916267781570685793}
-  qualityDropdownOBM: {fileID: 5916267782662102285}
-  gameResolutionDropdownOBM: {fileID: 5916267782544968080}
-  fullScreenToggleOBM: {fileID: 5916267781708280278}
-  gameControllerToggleOBM: {fileID: 5916267782495143737}
+  audioMixerObm: {fileID: 24100000, guid: 0af85b58737bd7344b2b7dc097985e5b, type: 2}
+  masterVolumeSliderObm: {fileID: 5916267781943337027}
+  sfxVolumeSliderObm: {fileID: 5916267781769120942}
+  musicVolumeSliderObm: {fileID: 5916267781570685793}
+  qualityDropdownObm: {fileID: 5916267782662102285}
+  gameResolutionDropdownObm: {fileID: 5916267782544968080}
+  fullScreenToggleObm: {fileID: 5916267781708280278}
+  gameControllerToggleObm: {fileID: 5916267782495143737}
 --- !u!222 &5916267782218350125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3714,7 +3714,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetControllerOBM
+        m_MethodName: SetControllerObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3909,7 +3909,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetGameResolutionOBM
+        m_MethodName: SetGameResolutionObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4307,7 +4307,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5916267782218350120}
-        m_MethodName: SetQualityOBM
+        m_MethodName: SetQualityObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

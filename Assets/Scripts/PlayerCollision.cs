@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerCollisionOBM : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
+    //Variables
     public Text soulAmountObm;
     public Text soulsNeededTextObm;
     public Rigidbody2D playerObm;
@@ -21,12 +22,13 @@ public class PlayerCollisionOBM : MonoBehaviour
 
     private void Awake()
     {
+        //checks the required souls for the current level
         soulsNeededTextObm.text = requiredSoulsObm.ToString("00");
     }
 
     void FixedUpdate()
     {
-        //Death
+        //Death after falling from map
         if (playerObm.position.y <= -25)
         {
             playerObm.position = spawnObm.position;
@@ -54,9 +56,10 @@ public class PlayerCollisionOBM : MonoBehaviour
 
     void Update()
     {
+        //Damage when falling from map
         if (fallThroughMapObm == true)
         {
-            playerObjectObm.GetComponent<PlayerHudOBM>().TakeDamageOBM(damageObm);
+            playerObjectObm.GetComponent<PlayerHud>().TakeDamageObm(damageObm);
             fallThroughMapObm = false;
         }
     }
@@ -64,7 +67,7 @@ public class PlayerCollisionOBM : MonoBehaviour
     //OnTriggerEnter is a static function made by unity so no Creator Identifier possible
     public void OnTriggerEnter2D(Collider2D collectibleObm)
     {
-        //collectibles
+        //collect collectibles with collision
         if (collectibleObm.gameObject.CompareTag("Collectible"))
         {
             Destroy(collectibleObm.gameObject);

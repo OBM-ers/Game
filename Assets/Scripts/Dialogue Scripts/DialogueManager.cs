@@ -4,13 +4,13 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManagerOBM : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
+    //Variables
     public Text nameTextObm;
     public Text dialogueTextObm;
     public Image dialogueBoxObm;
     public GameObject dialogueButtonObm;
-
     private Queue<string> sentencesObm;
 
     // Start is called before the first frame update
@@ -23,13 +23,15 @@ public class DialogueManagerOBM : MonoBehaviour
         sentencesObm = new Queue<string>();
     }
 
-    public void StartDialogueObm (DialogueOBM dialogueObm)
+    //Starts the dialogue
+    public void StartDialogueObm (Dialogue dialogueObm)
     {
         nameTextObm.text = dialogueObm.nameObm;
         sentencesObm.Clear();
         dialogueBoxObm.enabled = true;
         dialogueButtonObm.SetActive(true);
 
+        //Puts all the sentences in the dialogue class in a queue
         foreach (string sentenceObm in dialogueObm.sentencesObm)
         {
             sentencesObm.Enqueue(sentenceObm);
@@ -38,6 +40,7 @@ public class DialogueManagerOBM : MonoBehaviour
         DisplayNextSentenceObm();
     }
 
+    //Displays the next sentence
     public void DisplayNextSentenceObm()
     {
         if (sentencesObm.Count == 0)
@@ -51,6 +54,7 @@ public class DialogueManagerOBM : MonoBehaviour
         StartCoroutine(TypeSentenceObm(sentenceObm));
     }
 
+    //Types every single letter one by one of a sentence
     IEnumerator TypeSentenceObm (string currentSentenceObm)
     {
         dialogueTextObm.text = "";
@@ -61,6 +65,7 @@ public class DialogueManagerOBM : MonoBehaviour
         }
     }
 
+    //Ends the dialogue
     void EndDialogueObm()
     {
         StopAllCoroutines();

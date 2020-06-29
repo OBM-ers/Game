@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 
-public class ControllerDriverObm : MonoBehaviour
+public class ControllerDriver : MonoBehaviour
 {
     SerialPort ControllerDataObm;
     //Controller variables
@@ -14,9 +14,9 @@ public class ControllerDriverObm : MonoBehaviour
 
     void Awake()
     {
-        //string comPortObm = "COM3";
         try
         {
+            //Tries to open the serialport to com4, baudrate 115200
             ControllerDataObm = new SerialPort("COM4", 115200);
             ControllerDataObm.ReadTimeout = 10;
             ControllerDataObm.Open();
@@ -35,6 +35,7 @@ public class ControllerDriverObm : MonoBehaviour
         {
             try
             {
+                //same as before but this is made to reopen the communication with the serialport after loading a scene
                 ControllerDataObm = new SerialPort("COM4", 115200);
                 ControllerDataObm.ReadTimeout = 10;
                 ControllerDataObm.Open();
@@ -45,42 +46,41 @@ public class ControllerDriverObm : MonoBehaviour
             }
             catch { }
         }
-        else {
+        else 
+        {
             try
             {
+                //Input to right with joystick
                 if (ControllerDataObm.ReadLine() == "1")
                 {
-
-                    // Debug.Log(controllerInputObm);
                     controllerInputObm = "1";
                 }
-
+                //Input to left with joystick
                 else if (ControllerDataObm.ReadLine() == "-1")
                 {
-                    //Debug.Log(controllerInputObm);
                     controllerInputObm = "-1";
                 }
+                //Input forward with joystick
                 else if (ControllerDataObm.ReadLine() == "2")
                 {
-                    //Debug.Log(controllerInputObm);
                     controllerInputObm = "2";
                 }
+                //Jump input with jumpbutton
                 else if (ControllerDataObm.ReadLine() == "5")
                 {
 
                     jumpInputObm = true;
                     Debug.Log(controllerInputObm);
                 }
+                //Attack input with attackbutton
                 else if (ControllerDataObm.ReadLine() == "6")
                 {
                     attackInputObm = true;
-                   // controllerInputObm = "6";
-                    // Debug.Log(controllerInputObm);
                 }
+                //is the idle state
                 else if (ControllerDataObm.ReadLine() == "0")
                 {
                     controllerInputObm = "0";
-                    //Debug.Log(controllerInputObm);
                 }
             }
             catch { }
