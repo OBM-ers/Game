@@ -112,7 +112,6 @@ public class EnemyController : MonoBehaviour
             enablePatrolObm = true;
         }
         
-
         yield return 0;
     }
 }

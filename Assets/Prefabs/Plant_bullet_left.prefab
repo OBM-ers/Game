@@ -136,5 +136,5 @@ MonoBehaviour:
   bulletSpeedObm: 2
   bulletDamageObm: 20
   rigidbodyBulletObm: {fileID: 7453558731752328086}
-  shootingEnemy: {fileID: 2465756697468128375, guid: d93be6b6b95fc7b4bb93215b7b85c154,
+  shootingEnemyObm: {fileID: 2465756697468128375, guid: d93be6b6b95fc7b4bb93215b7b85c154,
     type: 3}
