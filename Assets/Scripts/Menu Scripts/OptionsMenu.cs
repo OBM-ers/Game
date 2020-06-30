@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
+    //Variables
     public AudioMixer audioMixerObm;
 
     public Slider masterVolumeSliderObm;
@@ -39,6 +40,7 @@ public class OptionsMenu : MonoBehaviour
 
     void Awake()
     {
+        //Checks if fullscreen has been toggled before opening the game
         screenIntObm = PlayerPrefs.GetInt("toggleStateFullScreenObm");
 
         if(screenIntObm == 1)
@@ -52,6 +54,7 @@ public class OptionsMenu : MonoBehaviour
             fullScreenToggleObm.isOn = false;
         }
 
+        //Checks if controller has been toggled before opening the game
         controllerIntObm = PlayerPrefs.GetInt("toggleStateControllerObm");
 
         if (screenIntObm == 1)
@@ -65,11 +68,13 @@ public class OptionsMenu : MonoBehaviour
             gameControllerToggleObm.isOn = false;
         }
 
+        //If the game resolution dropdown changes, it will change the resolution
         gameResolutionDropdownObm.onValueChanged.AddListener(new UnityAction<int>(index =>
         {
             PlayerPrefs.SetInt(resNameObm, gameResolutionDropdownObm.value);
             PlayerPrefs.Save();
         }));
+        //If the game quality value changes, it will decrease or increase the quality
         qualityDropdownObm.onValueChanged.AddListener(new UnityAction<int>(index =>
         {
             PlayerPrefs.SetInt(qualityNameObm, qualityDropdownObm.value);
@@ -79,7 +84,9 @@ public class OptionsMenu : MonoBehaviour
 
     void Start ()
     {
+        //Volume values (master). Gets the value from the saved preference
         masterVolumeSliderObm.value = PlayerPrefs.GetFloat("masterVolumeObm", 1f);
+        //if the value is changed, it will save the preferences
         audioMixerObm.SetFloat("MasterVolumeObm", PlayerPrefs.GetFloat("masterVolumeObm"));
 
         sfxVolumeSliderObm.value = PlayerPrefs.GetFloat("sfxVolumeObm", 1f);
@@ -88,8 +95,10 @@ public class OptionsMenu : MonoBehaviour
         musicVolumeSliderObm.value = PlayerPrefs.GetFloat("musicVolumeObm", 1f);
         audioMixerObm.SetFloat("MusicVolumeObm", PlayerPrefs.GetFloat("musicVolumeObm"));
 
+        //saves the new quality value
         qualityDropdownObm.value = PlayerPrefs.GetInt(qualityNameObm, 3);
 
+        //Fills the resolution dropdown, loads which resolation the monitor can handle
         screenResolutionsObm = Screen.resolutions;
 
         gameResolutionDropdownObm.ClearOptions();
@@ -115,6 +124,7 @@ public class OptionsMenu : MonoBehaviour
         gameResolutionDropdownObm.RefreshShownValue();
     }
 
+    //The methods below are the functions attached to the unity game object (event triggers)
     public void SetMasterVolumeObm (float gameMasterVolumeObm)
     {
         PlayerPrefs.SetFloat("masterVolumeObm", gameMasterVolumeObm);
