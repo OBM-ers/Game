@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GateScript : MonoBehaviour
 {
+    //Variables
     public string sceneNameObm;
     private bool visitSceneObm = false;
     public Animator gateAnimatorObm;
     public Animator animatorSceneObm;
-
     private GameObject playerObm;
 
     void Start()
     {
+        //puts gameobject with tag player into playerObm
         playerObm = GameObject.FindWithTag("Player");
     }
 
@@ -30,7 +31,7 @@ public class GateScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D a_collisionObm)
     {
-        // If player presses the 
+        // If player presses the W key it will load the new scene using a fadeout animation
         if (Input.GetKeyDown(KeyCode.W) && visitSceneObm)
         {
             animatorSceneObm.SetTrigger("FadeOut");
@@ -38,8 +39,8 @@ public class GateScript : MonoBehaviour
         }
         if (this.animatorSceneObm.GetCurrentAnimatorStateInfo(0).IsName("blackSceneFadeOut"))
         {
-        Debug.Log("Going to: " + sceneNameObm);
-        SceneManager.LoadScene(sceneNameObm);
+            Debug.Log("Going to: " + sceneNameObm);
+            SceneManager.LoadScene(sceneNameObm);
         }
         Debug.Log(sceneNameObm);
     }

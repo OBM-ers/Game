@@ -285,7 +285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetMusicVolumeOBM
+        m_MethodName: SetMusicVolumeObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -964,7 +964,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetSFXVolumeOBM
+        m_MethodName: SetSFXVolumeObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2989,7 +2989,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 487418440}
-        m_MethodName: QuitGameOBM
+        m_MethodName: QuitGameObm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3644,7 +3644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 487418440}
-        m_MethodName: GameHubOBM
+        m_MethodName: GameHubObm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4022,7 +4022,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetMasterVolumeOBM
+        m_MethodName: SetMasterVolumeObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4868,14 +4868,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b02ee85abc0ad4db70057a451a2b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixerOBM: {fileID: 24100000, guid: 0af85b58737bd7344b2b7dc097985e5b, type: 2}
-  masterVolumeSliderOBM: {fileID: 1301890346}
-  sfxVolumeSliderOBM: {fileID: 420178601}
-  musicVolumeSliderOBM: {fileID: 49303133}
-  qualityDropdownOBM: {fileID: 883626874}
-  gameResolutionDropdownOBM: {fileID: 1950059696}
-  fullScreenToggleOBM: {fileID: 1026930688}
-  gameControllerToggleOBM: {fileID: 1425978046}
+  audioMixerObm: {fileID: 24100000, guid: 0af85b58737bd7344b2b7dc097985e5b, type: 2}
+  masterVolumeSliderObm: {fileID: 1301890346}
+  sfxVolumeSliderObm: {fileID: 420178601}
+  musicVolumeSliderObm: {fileID: 49303133}
+  qualityDropdownObm: {fileID: 883626874}
+  gameResolutionDropdownObm: {fileID: 1950059696}
+  fullScreenToggleObm: {fileID: 1026930688}
+  gameControllerToggleObm: {fileID: 1425978046}
 --- !u!1 &1564867088
 GameObject:
   m_ObjectHideFlags: 0

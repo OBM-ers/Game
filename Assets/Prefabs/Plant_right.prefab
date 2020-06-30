@@ -5052,7 +5052,7 @@ MonoBehaviour:
   wallCheckObm:
     serializedVersion: 2
     m_Bits: 8192
-  animatorOBM: {fileID: 8672377390086977207}
+  animatorObm: {fileID: 8672377390086977207}
   hitSoundObm: {fileID: -3198920458026830794}
 --- !u!114 &8672377390086977224
 MonoBehaviour:
@@ -5071,7 +5071,7 @@ MonoBehaviour:
     type: 3}
   timeToShootObm: 0
   delayToShootObm: 5
-  shootRight: 1
+  shootRightObm: 1
 --- !u!82 &-3198920458026830794
 AudioSource:
   m_ObjectHideFlags: 0
