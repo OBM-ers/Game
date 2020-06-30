@@ -49619,7 +49619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219adee966111f34581ffa8079d0620a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNameObm: SnowScene
+  sceneNameObm: SnowSceneTwo
   gateAnimatorObm: {fileID: 1288238240}
   animatorSceneObm: {fileID: 2032298348}
 --- !u!61 &1288238244

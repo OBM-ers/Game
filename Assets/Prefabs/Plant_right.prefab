@@ -5071,7 +5071,7 @@ MonoBehaviour:
     type: 3}
   timeToShootObm: 0
   delayToShootObm: 5
-  shootRightObm: 0
+  shootRightObm: 1
 --- !u!82 &-3198920458026830794
 AudioSource:
   m_ObjectHideFlags: 0
