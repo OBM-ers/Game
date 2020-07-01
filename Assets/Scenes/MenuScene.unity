@@ -2348,7 +2348,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetQualityOBM
+        m_MethodName: SetQualityObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2896,7 +2896,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetGameFullscreenOBM
+        m_MethodName: SetGameFullscreenObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4464,7 +4464,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetControllerOBM
+        m_MethodName: SetControllerObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5693,7 +5693,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541829237}
-        m_MethodName: SetGameResolutionOBM
+        m_MethodName: SetGameResolutionObm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

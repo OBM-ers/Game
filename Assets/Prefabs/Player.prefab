@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdc57685b125a4280d07956eb7d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorObm: {fileID: 0}
+  animatorObm: {fileID: 7475975545712554480}
   timeBetweenAttackObm: 1
   attackPosObm: {fileID: 7475975546062311818}
   whatIsEnemiesObm:
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdc57685b125a4280d07956eb7d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorObm: {fileID: 0}
+  animatorObm: {fileID: 7475975546570212833}
   timeBetweenAttackObm: 2
   attackPosObm: {fileID: 7475975546062311818}
   whatIsEnemiesObm:
