@@ -34,7 +34,7 @@ public class MeleeCombat : MonoBehaviour
         else
         {
             //Check if cooldown timer is 0 and if the energy bar isn't empty also if the pausemenu is false
-            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
+            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0)
             {
                 //Fire1 is the input to attack (Leftmouse button)
                 if (Input.GetButtonDown("Fire1"))
@@ -46,7 +46,6 @@ public class MeleeCombat : MonoBehaviour
                         //Enemy takes damage
                         enemiesToDamageObm[i].GetComponent<EnemyController>().TakeDamageObm(damageObm);
                         Debug.Log("HIT");
-                    
                     }
                     AttackAnimObm();
                     timerObm = timeBetweenAttackObm;
@@ -65,14 +64,13 @@ public class MeleeCombat : MonoBehaviour
 
         if (controllerScriptObm.attackInputObm == true)
         {
-            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0 && PauseMenu.gameIsPausedObm == false)
+            if (timerObm <= 0 && GameObject.Find("Energy bar").GetComponent<Slider>().value > 0)
             {
                 Collider2D[] enemiesToDamageObm = Physics2D.OverlapCircleAll(attackPosObm.position, attackRangeObm, whatIsEnemiesObm);
                 for (int i = 0; i < enemiesToDamageObm.Length; i++)
                 {
                     enemiesToDamageObm[i].GetComponent<EnemyController>().TakeDamageObm(damageObm);
                     Debug.Log("HIT");
-
                 }
                 AttackAnimObm();
                 timerObm = timeBetweenAttackObm;
